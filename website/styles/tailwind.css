@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.baseButtonWitheStyleTailwind {
+  @apply bg-white flex justify-center rounded-md shadow-xl cursor-pointer;
+}
+.baseButtonBlackStyleTailwind {
+  @apply bg-black flex justify-center  rounded-md shadow-xl cursor-pointer text-white;
+}
+.smallButtonSize {
+  @apply w-10 h-10;
+}
+.languageGroupCard {
+  @apply bg-white flex gap-8 rounded-md shadow-lg p-5;
+}

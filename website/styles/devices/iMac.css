@@ -1,0 +1,208 @@
+.iMac {
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iMac-screen-container {
+  width: 1100px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.iMac-screen-border {
+  background-color: #121515;
+  height: 680px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.iMac-screen {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.iMac-logo {
+  background-color: #1c2021;
+  height: 90px;
+  width: 100%;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/*===========GRID SECTION==========*/
+.homeGridSection {
+  display: grid;
+  grid-template:
+    "firstTop leftImg"
+    "firstBottom leftImg";
+  height: 850px;
+  gap: 20px;
+}
+.homeGridSection-img-left-top {
+  grid-area: firstTop;
+  height: 100%;
+  width: 100%;
+}
+.homeGridSection-img-left-bottom {
+  grid-area: firstBottom;
+  height: 100%;
+  width: 100%;
+}
+
+.homeGridSection-img-right {
+  grid-area: leftImg;
+  height: 100%;
+  width: 100%;
+}
+.homeImgBigCenter {
+  margin-top: 80px;
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+.homeImgRow {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+/**===============LOADING ANIMATION================*/
+.lds-circle {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+.lds-circle > div {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%,
+  100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+
+/*====================MENU====================*/
+.menuParent {
+  position: relative;
+}
+.menuParentChild {
+  overflow: hidden;
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  position: absolute;
+  right: 0px;
+  padding: 0px;
+  background-color: white;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition-property: transform, padding, opacity;
+  transition-duration: 0.5s;
+}
+.menuParent:hover .menuParentChild {
+  padding: 20px;
+  opacity: 1;
+  transform: scale(1, 1);
+  transform-origin: top;
+  transition-property: transform, padding, opacity;
+  transition-duration: 0.5s;
+}
+/*=================LOGIN================*/
+
+/*img size*/
+.intoSectionImgSize {
+  height: 830px;
+  width: 100%;
+}
+.intoImgLeftSize {
+  height: 680px;
+}
+/*================PRODUCT*==================/
+/*baner and addToCardProductCardButton*/
+.addToCardProductCardButton {
+  width: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition-property: width;
+  transition-duration: 0.3s;
+}
+
+.productContainer:hover .addToCardProductCardButton {
+  width: 100px;
+  transition-property: width;
+  transition-duration: 0.3s;
+}
+/*productOtherImg*/
+.productOtherImg {
+  height: 0px;
+  transition-property: height;
+  transition-duration: 0.5s;
+}
+.productContainer:hover .productOtherImg {
+  height: 45.5px;
+  transition-property: height;
+  transition-duration: 0.5s;
+}
+
+/*=======================SEARCH======================*/
+input::placeholder {
+  opacity: 0.4;
+  color: gray;
+}
+/*================SLIDER==================*/
+.slider-IMac {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: #dedede;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.slider-IMac:hover {
+  opacity: 1;
+}
+/* The slider handle  */
+.slider-IMac::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 6px; /* Set a specific slider handle width */
+  height: 6px; /* Slider handle height */
+  background: #000000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider-IMac::-moz-range-thumb {
+  appearance: none;
+  width: 10px; /* Set a specific slider handle width */
+  height: 10px; /* Slider handle height */
+  background: #000000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}

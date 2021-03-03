@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Quando&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ovo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@800&family=Montserrat:wght@500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+
+.fontMacBookPro h1 {
+  font-family: "Catamaran", sans-serif;
+}
+
+.fontMacBookPro h2,
+.fontMacBookPro h3 {
+  font-family: "Quando", serif;
+}
+
+.fontMacBookPro p {
+  font-family: "Ovo", serif;
+}
+
+.fontMacBookPro .userName {
+  font-family: "Homemade Apple", cursive;
+}

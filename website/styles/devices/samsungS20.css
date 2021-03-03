@@ -1,0 +1,62 @@
+.samS20-border {
+  background-color: #3a4245;
+  padding: 5.5px 2.2px;
+  width: 310px;
+  border-radius: 45px;
+}
+.samS20 {
+  background-color: #121515;
+  height: 690px;
+  width: 305px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  position: relative;
+}
+.samS20-screen {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 35px;
+}
+.samS20-camera {
+  position: absolute;
+  top: 10px;
+  background-color: #121515;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  border: 3.2px solid #2c3233;
+  display: flex;
+  justify-content: center;
+}
+.samS20-camera-reflet {
+  position: absolute;
+  top: 2px;
+  background-color: #2c3233;
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+}
+.samS20-btn {
+  position: absolute;
+  width: 2.5px;
+  height: 45px;
+  background-color: #121515;
+  right: -4px;
+}
+
+.samS20-rBtn1 {
+  height: 85px;
+  top: 110px;
+}
+.samS20-rBtn2 {
+  top: 235px;
+}
+
+/* ======inputTypeFileWithIcon======*/
+.inputTypeFileWithIcon::-webkit-file-upload-button {
+  visibility: hidden;
+}

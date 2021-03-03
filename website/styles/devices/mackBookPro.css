@@ -1,0 +1,158 @@
+.macP {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.macP-screen-container {
+  background-color: #262c2d;
+  width: 900px;
+  height: 600px;
+  padding: 2px 2px 4px 2px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top: 3px solid #3a4245;
+  border-right: 3px solid #3a4245;
+  border-left: 3px solid #3a4245;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.macP-screen-border {
+  background-color: #121515;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 13px 13px 13px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.macP-screen {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%;
+}
+
+.macP-camera {
+  background-color: #121515;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  border: 2px solid #2c2c2c;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.macP-camera-reflet {
+  position: absolute;
+  top: 1.5px;
+  background-color: #2c2c2c;
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+}
+.macP-logo {
+  color: rgb(141, 141, 141);
+  font-size: 11px;
+}
+
+.macP-bottom {
+  background: linear-gradient(
+    180deg,
+    rgba(48, 49, 53, 1) 0%,
+    rgba(48, 49, 53, 1) 50%,
+    rgba(8, 9, 13, 1) 100%
+  );
+  width: 1100px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  padding-bottom: 17px;
+}
+
+.macP-keyboard {
+  background: linear-gradient(
+    90deg,
+    rgba(48, 49, 53, 1) 0%,
+    rgba(122, 122, 122, 1) 1%,
+    rgba(53, 54, 58, 1) 2%,
+    rgba(78, 79, 83, 1) 3%,
+    rgba(68, 69, 72, 1) 10%,
+    rgba(129, 130, 134, 1) 45%,
+    rgba(129, 130, 134, 1) 55%,
+    rgba(68, 69, 72, 1) 91%,
+    rgba(78, 79, 83, 1) 97%,
+    rgba(53, 54, 58, 1) 98%,
+    rgba(122, 122, 122, 1) 99%,
+    rgba(68, 68, 68, 1) 100%
+  );
+  width: 1100px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.macP-keyboard-notch {
+  background: linear-gradient(
+    90deg,
+    rgba(48, 49, 53, 1) 0%,
+    rgba(51, 52, 56, 1) 5%,
+    rgba(75, 75, 75, 1) 10%,
+    rgba(68, 69, 72, 1) 16%,
+    rgba(129, 130, 134, 1) 45%,
+    rgba(129, 130, 134, 1) 55%,
+    rgba(68, 69, 72, 1) 83%,
+    rgba(75, 75, 75, 1) 89%,
+    rgba(51, 52, 56, 1) 94%,
+    rgba(68, 68, 68, 1) 100%
+  );
+
+  height: 12px;
+  width: 140px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+/*=================TOP MENU==================*/
+.topMenuCard:hover .topMenuCardText {
+  height: 110px;
+  transition: height 0.5s cubic-bezier(0, 0.69, 0.26, 1.16);
+}
+
+.topMenuCardText {
+  height: 35px;
+  transition: height 0.5s ease-in;
+}
+
+.topMenuCard:hover .imageScale,
+.bigMenuHorizontal:hover .imageScale,
+.bigMenuVertical:hover .imageScale,
+.smallMenuVertical:hover .imageScale,
+.descriptionHoverScale:hover .imageScale {
+  transform: scale(1.2);
+  transition: transform 0.5s cubic-bezier(0, 0.69, 0.26, 1.16);
+}
+
+.imageScale {
+  transform: scale(1);
+  transition: transform 0.5s cubic-bezier(0, 0.69, 0.26, 1.16);
+}
+
+.topMenuCard:hover .badge,
+.bigMenuHorizontal:hover .badge,
+.bigMenuVertical:hover .badge,
+.smallMenuVertical:hover .badge {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+.badge {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}

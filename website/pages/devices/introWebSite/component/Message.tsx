@@ -55,12 +55,12 @@ function Message({
         </div>
         <p className="text-2xs mt-2">{message}</p>
         {attachment ? (
-          <div className="mt-2 flex justify-start">
+          <div className="mt-2 flex justify-start text-2xs">
             <Image
-              src="/devices/introWebsite/word_document.svg"
+              src="/devices/introWebSite/word_document_attachement.svg"
               width={165}
               height={120}
-              alt="icon word document"
+              alt="document"
             />
           </div>
         ) : null}

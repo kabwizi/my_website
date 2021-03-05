@@ -10,7 +10,7 @@ function Contact({
 }) {
   return (
     <div ref={contactRef} className="relative flex items-center gap-10 mt-36">
-      <div className="flex-1 z-10 mb-14">
+      <div className="flex-1 z-10 mb-20">
         <NumberTitle
           title="CONTACT US"
           titleColor={"BLACK"}
@@ -20,17 +20,23 @@ function Contact({
         />
       </div>
       <div className="relative z-10 flex-1 flex flex-col gap-5">
-        <input
-          className="bg-gray-100 outline-none pl-10 py-2 w-full shadow-lg text-xs"
-          type="text"
-          placeholder="ENTER YOUR E-MAIL"
-        />
-        <textarea
-          className="bg-gray-100 outline-none  pl-10 py-2 w-full shadow-lg  text-xs"
-          placeholder="MESSAGE"
-        ></textarea>
+        <label className="text-sm font-bold">
+          E-MAIL
+          <input
+            className="bg-gray-100 outline-none pl-10 py-2 w-full shadow-lg text-xs"
+            type="text"
+            placeholder="ENTER YOUR E-MAIL"
+          />
+        </label>
+        <label className="text-sm font-bold">
+          MESSAGE
+          <textarea
+            className="bg-gray-100 outline-none  pl-10 py-2 w-full shadow-lg  text-xs h-24"
+            placeholder="MESSAGE"
+          ></textarea>
+        </label>
         <div className="flex">
-          <Button color="RED" />
+          <Button color="RED" label="SEND MESSAGE" contactRef={contactRef} />
         </div>
       </div>
       <div className="dumbbellSize absolute -right-44 flex-none -z-10">

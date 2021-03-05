@@ -4,13 +4,7 @@ import { IMusic } from "../IPhone12Context";
 import { useData } from "../IPhone12Context";
 import { motion } from "framer-motion";
 
-function MusicCard({
-  music,
-  musicIndex,
-}: {
-  music: IMusic;
-  musicIndex: number;
-}) {
+function MusicCard({ music }: { music: IMusic }) {
   const context = useData();
 
   return music ? (
@@ -21,7 +15,7 @@ function MusicCard({
         context?.dispatchData({
           type: "CHANGE_MUSIC_TRACK",
           payload: {
-            musicIndex: musicIndex,
+            musicIndex: music.musicIndex,
             albumIndex: music.albumIndex,
           },
         });

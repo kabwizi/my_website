@@ -3,6 +3,7 @@ import Image from "next/image";
 import style from "../../../styles/scroller.module.css";
 import Navigation from "./component/Navigation";
 import { useData } from "./IMacContext";
+import UseMe from "../../component/UseMe";
 
 function IMac() {
   const context = useData();
@@ -15,7 +16,13 @@ function IMac() {
   }, [context && context.data.currentPageIndex]);
 
   return (
-    <div className={`iMac`}>
+    <div className={`relative iMac`}>
+      <UseMe
+        direction="LEFT"
+        position="-top-10 -left-28"
+        textColor="text-white"
+        bgColor="bg-gray-200 bg-opacity-50"
+      />
       <div className="iMac-screen-container">
         <div className="iMac-screen-border">
           <div className={`iMac-screen transform ${style.scrollbarIMac}`}>

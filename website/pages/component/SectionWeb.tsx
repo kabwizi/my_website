@@ -8,15 +8,14 @@ import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import MackBookProContext from "../devices/mackBookPro/MackBookProContext";
 import IMacContext from "../devices/IMac/IMacContext";
 import { useData } from "../WebsiteMainContext";
-import UseMe from "./UseMe";
+import { useWindowsSize } from "../../customHooks/CustomHooks";
 
 function SectionWeb() {
+  const isSmallScreenSize = useWindowsSize("(max-width:1023px)");
   const context = useData();
-
   const iMacRef = useRef<HTMLDivElement | null>(null);
   const macBookProRef = useRef<HTMLDivElement | null>(null);
   const iPadRef = useRef<HTMLDivElement | null>(null);
-
   const iMacIsOnScreen = useOnScreen(iMacRef, "0px -0px -600px -0px");
   const macBookProIsOnScreen = useOnScreen(
     macBookProRef,
@@ -46,38 +45,23 @@ function SectionWeb() {
       <div className="space-y-16 mt-16">
         {/**=================IMAC============== */}
         <AnimateSharedLayout>
-          <motion.div layout className="flex items-start justify-center gap-16">
+          <motion.div
+            layout
+            className="flex flex-col lg:flex-row items-start justify-center gap-16"
+          >
             <AnimatePresence>
-              {!iMacIsOnScreen ? (
-                <motion.div
-                  layout
-                  exit={{ opacity: 0 }}
-                  className="w-80 flex-none"
-                >
-                  {context ? (
-                    <SmallTitle
-                      textColor="WHITE"
-                      title={
-                        context.data.language[context.data.languageIndex]
-                          .section4.child.child1.title
-                      }
-                      description={
-                        context.data.language[context.data.languageIndex]
-                          .section4.child.child1.description
-                      }
-                    />
-                  ) : null}
-                </motion.div>
-              ) : null}
+              {isSmallScreenSize
+                ? IMacDescription(isSmallScreenSize)
+                : !iMacIsOnScreen
+                ? IMacDescription()
+                : null}
             </AnimatePresence>
             <div className="relative iMacSizeMainCss flex-1">
-              <motion.div ref={iMacRef} layout className={`left-0 absolute`}>
-                <UseMe
-                  direction="LEFT"
-                  position="-top-10 -left-28"
-                  textColor="text-white"
-                  bgColor="bg-gray-200 bg-opacity-50"
-                />
+              <motion.div
+                ref={iMacRef}
+                layout
+                className={`left-0 relative lg:absolute`}
+              >
                 <IMacContext>
                   <IMac />
                 </IMacContext>
@@ -88,79 +72,49 @@ function SectionWeb() {
 
         {/**=================MACKBOOK============== */}
         <AnimateSharedLayout>
-          <motion.div layout className="flex items-start justify-center gap-16">
+          <motion.div
+            layout
+            className="flex  flex-col-reverse lg:flex-row  items-start justify-center gap-16"
+          >
             <div className="relative mackbookSizeMainCss flex-1">
               <motion.div
                 ref={macBookProRef}
                 layout
-                className={`right-0 absolute`}
+                className={`right-0 relative lg:absolute`}
               >
-                <UseMe
-                  direction="RIGHT"
-                  position="-top-10 -right-4"
-                  textColor="text-white"
-                  bgColor="bg-yellow-500 bg-opacity-50"
-                />
                 <MackBookProContext>
                   <MackBookPro />
                 </MackBookProContext>
               </motion.div>
             </div>
             <AnimatePresence>
-              {!macBookProIsOnScreen ? (
-                <motion.div
-                  layout
-                  exit={{ opacity: 0 }}
-                  className="w-80 flex-none"
-                >
-                  {context ? (
-                    <SmallTitle
-                      textColor="WHITE"
-                      title={
-                        context.data.language[context.data.languageIndex]
-                          .section4.child.child2.title
-                      }
-                      description={
-                        context.data.language[context.data.languageIndex]
-                          .section4.child.child2.description
-                      }
-                    />
-                  ) : null}
-                </motion.div>
-              ) : null}
+              {isSmallScreenSize
+                ? MacbookProDescription(isSmallScreenSize)
+                : !macBookProIsOnScreen
+                ? MacbookProDescription()
+                : null}
             </AnimatePresence>
           </motion.div>
         </AnimateSharedLayout>
         {/**=================IPAD============== */}
         <AnimateSharedLayout>
-          <motion.div layout className="flex items-start justify-center gap-16">
+          <motion.div
+            layout
+            className="flex  flex-col lg:flex-row  items-start justify-center gap-16"
+          >
             <AnimatePresence>
-              {!iPadRefIsOnScreen ? (
-                <motion.div exit={{ opacity: 0 }} className="w-80 flex-none">
-                  {context ? (
-                    <SmallTitle
-                      textColor="WHITE"
-                      title={
-                        context.data.language[context.data.languageIndex]
-                          .section4.child.child3.title
-                      }
-                      description={
-                        context.data.language[context.data.languageIndex]
-                          .section4.child.child3.description
-                      }
-                    />
-                  ) : null}
-                </motion.div>
-              ) : null}
+              {isSmallScreenSize
+                ? IPadDescription(isSmallScreenSize)
+                : !iPadRefIsOnScreen
+                ? IPadDescription()
+                : null}
             </AnimatePresence>
             <div className="relative iPadSizeMainCss flex-1">
-              <motion.div ref={iPadRef} layout className="absolute left-0">
-                <UseMe
-                  direction="LEFT"
-                  position="-top-10 -left-28"
-                  textColor="text-white"
-                  bgColor="bg-yellow-800 bg-opacity-50"
-                />
+              <motion.div
+                ref={iPadRef}
+                layout
+                className="relative lg:absolute left-0"
+              >
                 <IPad />
               </motion.div>
             </div>
@@ -169,6 +123,77 @@ function SectionWeb() {
       </div>
     </div>
   );
+
+  function IMacDescription(isSmallScreenSize?: boolean) {
+    return (
+      <motion.div
+        layout
+        exit={{ opacity: 0 }}
+        className={`${isSmallScreenSize ? "w-full" : "w-80"} flex-none`}
+      >
+        {context ? (
+          <SmallTitle
+            textColor="WHITE"
+            title={
+              context.data.language[context.data.languageIndex].section4.child
+                .child1.title
+            }
+            description={
+              context.data.language[context.data.languageIndex].section4.child
+                .child1.description
+            }
+          />
+        ) : null}
+      </motion.div>
+    );
+  }
+
+  function MacbookProDescription(isSmallScreenSize?: boolean) {
+    return (
+      <motion.div
+        layout
+        exit={{ opacity: 0 }}
+        className={`${isSmallScreenSize ? "w-full" : "w-80"} flex-none`}
+      >
+        {context ? (
+          <SmallTitle
+            textColor="WHITE"
+            title={
+              context.data.language[context.data.languageIndex].section4.child
+                .child2.title
+            }
+            description={
+              context.data.language[context.data.languageIndex].section4.child
+                .child2.description
+            }
+          />
+        ) : null}
+      </motion.div>
+    );
+  }
+
+  function IPadDescription(isSmallScreenSize?: boolean) {
+    return (
+      <motion.div
+        exit={{ opacity: 0 }}
+        className={`${isSmallScreenSize ? "w-full" : "w-80"} flex-none`}
+      >
+        {context ? (
+          <SmallTitle
+            textColor="WHITE"
+            title={
+              context.data.language[context.data.languageIndex].section4.child
+                .child3.title
+            }
+            description={
+              context.data.language[context.data.languageIndex].section4.child
+                .child3.description
+            }
+          />
+        ) : null}
+      </motion.div>
+    );
+  }
 
   // Hook
   function useOnScreen(

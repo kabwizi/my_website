@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import BigTitle from "./BigTitle";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -7,7 +7,6 @@ import { useData } from "../WebsiteMainContext";
 
 function SectionLanguage() {
   const context = useData();
-
   const [extend, setExtend] = useState<boolean>(false);
 
   return (
@@ -29,7 +28,7 @@ function SectionLanguage() {
 
       <motion.div
         initial={{ height: "300px" }}
-        animate={{ height: extend ? "500px" : "300px" }}
+        animate={{ height: extend ? "" : "300px" }}
         className={`bg-gray-50 w-full mt-7 p-5 justify-around flex flex-wrap gap-x-5 gap-y-10 overflow-y-auto shadow-inner`}
       >
         <LanguageCard
@@ -169,7 +168,7 @@ function SectionLanguage() {
       >
         <div
           onClick={() => setExtend(!extend)}
-          className="bg-white shadow-lg w-80 h-10 flex items-center justify-center rounded-md cursor-pointer"
+          className="bg-white shadow-lg w-72 h-10 flex items-center justify-center rounded-md cursor-pointer"
         >
           <Image
             className={extend ? "transform rotate-180" : ""}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import { useOnScreen } from "../../../../customHooks/CustomHooks";
 import Filter from "../component/Filter";
 import ProductCard from "../component/ProductCard";
 import { IProduct, useData } from "../IMacContext";
@@ -205,33 +206,6 @@ function Shop() {
     } else {
       return productList.filter((e) => e.brand == brand);
     }
-  }
-  // Hook
-  function useOnScreen(
-    ref: React.MutableRefObject<HTMLDivElement | null>,
-
-    rootMargin = "0px"
-  ) {
-    // State and setter for storing whether element is visible
-    const [isIntersecting, setIntersecting] = useState(false);
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          // Update our state when observer callback fires
-          setIntersecting(entry.isIntersecting);
-        },
-        { rootMargin }
-      );
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-      return () => {
-        ref.current ? observer.unobserve(ref.current) : null;
-      };
-    }, []); // Empty array ensures that effect is only run on mount and unmount
-
-    return isIntersecting;
   }
 }
 

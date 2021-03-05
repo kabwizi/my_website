@@ -26,7 +26,7 @@ function ModifyNameCard({
       exit={{ height: "1px", opacity: 0, y: "20px" }}
       className="bg-white absolute bottom-0 w-full p-4 shadow-2xl overflow-hidden"
     >
-      <h2 className="font-bold">Changer votre nom</h2>
+      <p className="font-bold">Changer votre nom</p>
       <input
         ref={changeNameRef}
         className="outline-none mt-2 mb-4"

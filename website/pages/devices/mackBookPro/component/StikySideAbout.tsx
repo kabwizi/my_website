@@ -14,9 +14,9 @@ function StikySideAbout() {
     <div className="flex-none w-40">
       <div className="flex flex-col gap-5 sticky top-2">
         <div className="bg-white relative flex flex-col justify-center items-center space-y-2 border border-yellow-400 p-4">
-          <h2 className="text-xs font-semibold absolute -top-2 bg-white w-14 text-center">
+          <p className="text-xs font-semibold absolute -top-2 bg-white w-14 text-center">
             About
-          </h2>
+          </p>
           <div className="flex justify-center rounded-full overflow-hidden relative w-20 h-20">
             {context ? (
               <Image
@@ -35,9 +35,9 @@ function StikySideAbout() {
           </p>
         </div>
         <div className="bg-white relative flex flex-col justify-center items-center space-y-2 border-2 border-gray-100 pt-1 pb-3 px-4">
-          <h2 className="bg-white text-xs font-semibold absolute -top-2  w-28 text-center">
+          <p className="bg-white text-xs font-semibold absolute -top-2  w-28 text-center">
             Follow me on
-          </h2>
+          </p>
           <SocialMedia />
         </div>
         <AnimateSharedLayout>
@@ -45,23 +45,26 @@ function StikySideAbout() {
             layout
             className="bg-yellow-100 bg-opacity-60 p-4 space-y-2"
           >
-            <h2 className="text-xs font-semibold">Never Miss A Post!</h2>
+            <p className="text-xs font-semibold">Never Miss A Post!</p>
             <p className="text-3xs text-gray-500">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna
               morbi nunc diam neque porttitor consectetur. Rutrum at donec nisi
               nisi, nunc platea risus augue.
             </p>
-            <input
-              ref={subscibreRef}
-              onChange={() => {
-                if (subscription) {
-                  setSubscription(false);
-                }
-              }}
-              className="border-2 border-gray-100 text-3xs w-full px-2 py-1 outline-none"
-              type="text"
-              placeholder="Your e-mail"
-            />
+            <label className="text-2xs font-semibold">
+              Subscibre to newsletter
+              <input
+                ref={subscibreRef}
+                onChange={() => {
+                  if (subscription) {
+                    setSubscription(false);
+                  }
+                }}
+                className="border-2 border-gray-100 text-3xs w-full px-2 py-1 outline-none"
+                type="text"
+                placeholder="Your e-mail"
+              />
+            </label>
             <AnimatePresence>
               {subscription ? (
                 <motion.p
@@ -80,9 +83,11 @@ function StikySideAbout() {
                 if (subscibreRef.current) subscibreRef.current.value = "";
                 setSubscription(true);
               }}
-              className="bg-yellow-500 cursor-pointer text-white text-center py-1 text-3xs shadow-md"
+              className="bg-black cursor-pointer  py-1  shadow-md"
             >
-              Subscribe
+              <p className="text-white text-center text-3xs font-bold">
+                Subscribe
+              </p>
             </motion.div>
           </motion.div>
         </AnimateSharedLayout>

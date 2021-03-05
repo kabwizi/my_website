@@ -16,13 +16,13 @@ function SectionIntro({
     <section className="relative w-full py-10 flex justify-center text-white">
       <div className="screenMaxSize flex-col lg:flex-row flex gap-40 z-20 items-center py-10 justify-between">
         <div className="py-16 flex-1">
-          <h1 className="text-7xl font-black">
+          <h1 className="text-5xl sm:text-7xl font-black">
             {
               context?.data.language[context.data.languageIndex].section1.parent
                 .title
             }
           </h1>
-          <p className="mt-5 text-lg font-semibold">
+          <p className="mt-5 font-semibold">
             {
               context?.data.language[context.data.languageIndex].section1.parent
                 .description
@@ -33,7 +33,7 @@ function SectionIntro({
             onClick={() =>
               contactRef.current?.scrollIntoView({ behavior: "smooth" })
             }
-            className="baseButtonWitheStyleTailwind w-40 h-10 flex items-center font-semibold mt-3 text-black"
+            className="baseButtonWitheStyleTailwind w-40 h-10 flex items-center font-semibold mt-8 text-black"
           >
             {
               context?.data.language[context.data.languageIndex].section1.parent

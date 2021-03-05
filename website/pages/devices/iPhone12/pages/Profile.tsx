@@ -47,7 +47,7 @@ function Profile() {
           {context && context.data.songLiked.length > 0 ? (
             context.data.songLiked.map((e, musicIndex) => (
               <div key={e.title}>
-                <MusicCard music={e} musicIndex={musicIndex} />
+                <MusicCard music={e} />
               </div>
             ))
           ) : (
@@ -58,9 +58,9 @@ function Profile() {
                 width={150}
                 height={150}
               />
-              <h2 className="absolute font-bold text-2xl text-gray-400">
+              <p className="absolute font-bold text-2xl text-gray-400">
                 Like your first song
-              </h2>
+              </p>
             </div>
           )}
         </div>

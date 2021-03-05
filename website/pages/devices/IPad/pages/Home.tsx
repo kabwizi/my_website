@@ -11,6 +11,7 @@ function Home() {
   const serviceRef = useRef<HTMLDivElement | null>(null);
   const PricingRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
+  const topContainerRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <>
@@ -18,6 +19,7 @@ function Home() {
         serviceRef={serviceRef}
         PricingRef={PricingRef}
         contactRef={contactRef}
+        topContainerRef={topContainerRef}
       />
       <div className="px-5">
         <SectionTakeAction />
@@ -36,7 +38,7 @@ function Home() {
         <Pricing PricingRef={PricingRef} />
         <Contact contactRef={contactRef} />
       </div>
-      <Footer />
+      <Footer topContainerRef={topContainerRef} />
     </>
   );
 }

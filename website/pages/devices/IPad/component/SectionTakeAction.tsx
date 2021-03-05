@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import NumberTitle from "./NumberTitle";
+import { useOnScreen } from "../../../../customHooks/CustomHooks";
+import { motion } from "framer-motion";
 
 function SectionTakeAction() {
+  const iPadServiceJumpRef = useRef<HTMLDivElement | null>(null);
+  const onScreen = useOnScreen(iPadServiceJumpRef, "-250px");
+
   return (
     <div className="relative flex items-center pt-28 pb-20 z-50">
-      <div className="relative flex-1 w-full h-96">
-        <Image src="/devices/iPad/img/iPad_service_jump.svg" layout="fill" />
+      <div ref={iPadServiceJumpRef} className="relative flex-1 w-full h-96">
+        {onScreen ? (
+          <motion.div
+            className="p-5 relative flex-1 w-full h-96"
+            initial={{ x: -100 }}
+            animate={{ x: 0 }}
+          >
+            <Image
+              src="/devices/iPad/img/iPad_service_jump.svg"
+              layout="fill"
+            />
+          </motion.div>
+        ) : null}
       </div>
       <div className="relative flex-1 z-10">
         <NumberTitle

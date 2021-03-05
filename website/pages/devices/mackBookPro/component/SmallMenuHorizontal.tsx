@@ -11,7 +11,7 @@ function SmallMenuHorizontal({ recipe }: { recipe: IRecipe }) {
       whileHover={{ backgroundColor: "#FEF8DD" }}
       className="bg-white bigMenuHorizontal rounded-sm px-2 py-1 relative cursor-pointer flex gap-1 items-center "
     >
-      <div className="relative w-12 h-12 flex-none">
+      <div className="relative w-16 h-14 flex-none">
         {recipe ? (
           <Image
             className="imageScale"
@@ -21,13 +21,13 @@ function SmallMenuHorizontal({ recipe }: { recipe: IRecipe }) {
           />
         ) : null}
       </div>
-      <div className="">
+      <div className=" h-12 overflow-y-hidden">
         <div className="flex gap-3">
           <Level level={recipe.level} />
           <Time time={recipe.time} />
         </div>
         <div className="flex gap-2 items-center">
-          <h2 className="font-semibold text-2xs ">{recipe.title}</h2>
+          <p className="font-semibold text-2xs flex-1">{recipe.title}</p>
           <div className="bg-yellow-400 px-2 py-1 text-white text-4xs font-semibold rounded-sm">
             {recipe.type}
           </div>

@@ -38,7 +38,7 @@ function TopMenuCard({ recipe }: { recipe: IRecipe }) {
           <Level level={recipe.level} />
           <Time time={recipe.time} />
         </div>
-        <h2 className="font-semibold text-2xs">{recipe.title}</h2>
+        <p className="font-semibold text-2xs">{recipe.title}</p>
         <div
           className="text-3xs text-gray-500  h-14 overflow-hidden mb-1"
           dangerouslySetInnerHTML={{

@@ -3,6 +3,7 @@ import Style from "../../../styles/scroller.module.css";
 import Navigation from "./component/Navigation";
 import Font from "../../../styles/font.module.css";
 import { useData } from "./MackBookProContext";
+import UseMe from "../../component/UseMe";
 
 function MackBookPro() {
   const context = useData();
@@ -14,6 +15,12 @@ function MackBookPro() {
 
   return (
     <div className={`macP ${Style.scrollbarIMac} ${Font.fontMacBookPro}`}>
+      <UseMe
+        direction="RIGHT"
+        position="-top-10 -right-4"
+        textColor="text-white"
+        bgColor="bg-yellow-500 bg-opacity-50"
+      />
       <div className="macP-screen-container">
         <div className="macP-screen-border">
           <div className="macP-camera">

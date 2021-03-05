@@ -101,6 +101,7 @@ interface webSiteText {
       label1: string;
       label2: string;
       label3: string;
+      label4: string;
     };
   };
   footer: string;
@@ -324,6 +325,7 @@ const initialState: IData = {
           label1: "Nom complet",
           label2: "Courriel",
           label3: "Message",
+          label4: "Pièce jointe",
         },
       },
       footer: "© 2019 Tout droit réservé",
@@ -507,6 +509,7 @@ const initialState: IData = {
           label1: "Full name",
           label2: "E-mail",
           label3: "Message",
+          label4: "Attachment",
         },
       },
       footer: "© 2019 All rights reserved",

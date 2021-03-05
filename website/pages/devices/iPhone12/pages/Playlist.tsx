@@ -84,7 +84,7 @@ function Playlist() {
               ) {
                 return (
                   <motion.div variants={childVariante} key={e.title}>
-                    <MusicCard music={e} musicIndex={musicIndex} />
+                    <MusicCard music={e} />
                   </motion.div>
                 );
               }
@@ -93,7 +93,7 @@ function Playlist() {
               context.data.track.albumIndex
             ].musicList.map((e, musicIndex) => (
               <motion.div variants={childVariante} key={e.title}>
-                <MusicCard music={e} musicIndex={musicIndex} />
+                <MusicCard music={e} />
               </motion.div>
             ))}
       </motion.div>

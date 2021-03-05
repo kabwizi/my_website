@@ -12,6 +12,12 @@
 .iPadSizeMainCss {
   height: 700px;
 }
+
+/*===============INTRO PHONE SHADOW============*/
+.IntoPhoneShadow {
+  box-shadow: 14px 12px 31px 12px rgba(0, 0, 0, 0.18);
+}
+
 /*=======CONTACT TEXT AREA PLACEHOLDER OPACITY======*/
 .fontOpacity::placeholder {
   color: rgba(0, 0, 0, 0.2);

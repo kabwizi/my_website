@@ -1,22 +1,47 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import NumberTitle from "./NumberTitle";
 import Coach from "./Coach";
 import Testtimonial from "./Testtimonial";
+import { motion } from "framer-motion";
+import { useOnScreen } from "../../../../customHooks/CustomHooks";
 
 function SectionBlack() {
+  const sectionBlackTopImgRef = useRef<HTMLDivElement | null>(null);
+  const onScreen = useOnScreen(sectionBlackTopImgRef, "-10px");
+
   return (
     <div className="bg-black text-white px-5 flex flex-col items-center mt-80 relative">
-      <div className="bg-white flex justify-center items-center relative -top-40 p-12">
-        <p className="bg-yellow-500 bg-gradient-to-t from-red-400  text-transparent bg-clip-text text-6xl font-black absolute -top-6 -z-10">
-          TAKE CONTROL
-        </p>
-        <Image
-          src="/devices/iPad/img/section_black_top_img.png"
-          height={400}
-          width={600}
-          objectFit="cover"
-        />
+      <div ref={sectionBlackTopImgRef}>
+        {onScreen ? (
+          <motion.div
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            className="bg-white flex justify-center items-center relative -top-40 p-16"
+          >
+            <p className="bg-yellow-500 bg-gradient-to-t from-red-400  text-transparent bg-clip-text text-6xl font-black absolute -top-6 -z-10">
+              TAKE CONTROL
+            </p>
+            <div className="overflow-hidden">
+              <motion.div
+                animate={{ scale: [1.05, 1] }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+                className="relative"
+              >
+                <Image
+                  src="/devices/iPad/img/section_black_top_img.png"
+                  height={400}
+                  width={600}
+                  objectFit="cover"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+        ) : null}
       </div>
       <div className="flex w-full h-screen ">
         <div className="relative w-full h-full flex-1">
@@ -56,7 +81,7 @@ function SectionBlack() {
           et du niveau de détails que vous souhaitez.
         </p>
       </div>
-      <div className="flex w-full mt-5">
+      <div className="bg-white flex w-full mt-5 p-3 gap-4 overflow-hidden">
         <Coach title="Julio Rodrigez" img={"/devices/iPad/img/coach_1.png"} />
         <Coach title="Christine Forte" img={"/devices/iPad/img/coach_2.png"} />
         <Coach title="Jeff Bison" img={"/devices/iPad/img/coach_3.png"} />

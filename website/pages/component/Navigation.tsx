@@ -7,8 +7,13 @@ function Navigation() {
   const context = useData();
 
   return (
-    <nav className="screenMaxSize w-full e relative h-16 flex justify-between items-center z-10">
-      <Image src="/main/main_website_logo.svg" width={130} height={100} />
+    <nav className="screenMaxSize w-full relative h-16 flex justify-between items-center z-10">
+      <Image
+        src="/main/main_website_logo.svg"
+        width={130}
+        height={50}
+        alt="website logo"
+      />
       <div className="flex gap-2 flex-none text-sm">
         <motion.div
           whileHover={{ scale: 1.1 }}

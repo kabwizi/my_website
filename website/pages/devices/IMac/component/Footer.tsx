@@ -8,7 +8,7 @@ function Footer() {
         <h1 className="text-4xl font-black -mt-2">SNKR</h1>
         <div className="flex-1 flex gap-10">
           <div className="text-2xs text-gray-400 space-y-1">
-            <h3 className="font-bold text-xs text-white">HELP</h3>
+            <p className="font-bold text-xs text-white">HELP</p>
             <p className="cursor-pointer hover:text-white">
               Help & Customer Service
             </p>
@@ -21,7 +21,7 @@ function Footer() {
             </p>
           </div>
           <div className="text-2xs text-gray-400 space-y-1">
-            <h3 className="font-bold text-xs text-white">ABOUT SNKR</h3>
+            <p className="font-bold text-xs text-white">ABOUT SNKR</p>
             <p className="cursor-pointer hover:text-white">News</p>
             <p className="cursor-pointer hover:text-white">Careers</p>
             <p className="cursor-pointer hover:text-white">
@@ -30,7 +30,12 @@ function Footer() {
           </div>
         </div>
         <div className="flex items-end flex-col gap-4">
-          <div className="flex items-center gap-4">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-4 cursor-pointer"
+          >
             <p className=" font-semibold text-2xs">FACEBOOK</p>
             <div className="bg-white w-7 h-7 flex justify-center items-center">
               <Image
@@ -39,8 +44,13 @@ function Footer() {
                 height={11}
               />
             </div>
-          </div>
-          <div className="flex items-center gap-4">
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-4"
+          >
             <p className="text-white font-semibold text-2xs">INSTAGRAM</p>
             <div className="bg-white w-7 h-7 flex justify-center items-center">
               <Image
@@ -49,7 +59,7 @@ function Footer() {
                 height={11}
               />
             </div>
-          </div>
+          </a>
         </div>
       </div>
       <div className="bg-white px-4 text-gray-500 flex justify-between w-full text-2xs py-2 mt-16  font-semibold">

@@ -9,9 +9,9 @@ function CheckoutPaymentInformation({
   const [paymentType, setPaymentType] = useState("CREDIT");
   return (
     <div>
-      <h2 className="font-bold">PAYMENT INFORMTION</h2>
+      <p className="font-bold">PAYMENT INFORMTION</p>
       <div className="flex flex-col border px-4 pb-4 pt-2 mt-4">
-        <h2 className="font-semibold text-xs">DO YOU HAVE A PROMO CODE?</h2>
+        <p className="font-semibold text-xs">DO YOU HAVE A PROMO CODE?</p>
         <input
           className="border flex-1 text-xs px-4 py-2 mt-4"
           type="text"

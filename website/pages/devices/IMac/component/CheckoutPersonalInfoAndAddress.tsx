@@ -7,9 +7,9 @@ function CheckoutPersonalInfoAndAddress({
 }) {
   return (
     <div className="felx-1">
-      <h2 className="font-bold">DELIVERY ADDRESS</h2>
+      <p className="font-bold">DELIVERY ADDRESS</p>
       <div className="flex flex-col gap-4 border px-4 pb-4 pt-2 mt-4">
-        <h3 className="font-semibold text-xs">PERSONAL INFO</h3>
+        <p className="font-semibold text-xs">PERSONAL INFO</p>
         <div className="flex w-full space-x-4 ">
           <input
             className="border flex-1 text-xs px-4 py-2"
@@ -34,7 +34,7 @@ function CheckoutPersonalInfoAndAddress({
         />
       </div>
       <div className="flex border px-4 pb-4 pt-2 flex-col mt-4 gap-4">
-        <h3 className="font-semibold text-xs">ADDRESS</h3>
+        <p className="font-semibold text-xs">ADDRESS</p>
         <input
           className="border text-xs px-4 py-2"
           type="text"

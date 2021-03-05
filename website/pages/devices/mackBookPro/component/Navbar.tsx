@@ -59,50 +59,53 @@ function Navbar({ isFooter }: { isFooter: boolean }) {
             <p>© 2020 Copyright</p>
           ) : (
             <div className="relative flex h-full">
-              <label htmlFor="searchId"></label>
-              <input
-                id="searchId"
-                ref={searchRef}
-                onChange={(a) => {
-                  if (context && a.currentTarget.value.trim() !== "") {
-                    setSearch(
-                      context?.data.recipes.filter(
-                        (e) =>
-                          e.title
-                            .toLocaleLowerCase()
-                            .startsWith(
-                              a.currentTarget.value.toLocaleLowerCase()
-                            ) ||
-                          e.type
-                            .toLocaleLowerCase()
-                            .startsWith(a.currentTarget.value)
-                      )
-                    );
-                  } else {
-                    setSearch(null);
-                  }
-                }}
-                className=" border-gray-100 text-3xs w-24 px-2 py-1 outline-none"
-                type="text"
-                placeholder="Search menu..."
-              />
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                className="bg-yellow-400 cursor-pointer w-10 rounded-sm flex justify-center items-center shadow-sm "
-              >
-                <Image
-                  src="/devices/macBookPro/search_white.svg"
-                  width={12}
-                  height={12}
-                />
-              </motion.div>
+              <div className="flex items-center">
+                <label className="text-3xs">
+                  Search
+                  <input
+                    ref={searchRef}
+                    onChange={(a) => {
+                      if (context && a.currentTarget.value.trim() !== "") {
+                        setSearch(
+                          context?.data.recipes.filter(
+                            (e) =>
+                              e.title
+                                .toLocaleLowerCase()
+                                .startsWith(
+                                  a.currentTarget.value.toLocaleLowerCase()
+                                ) ||
+                              e.type
+                                .toLocaleLowerCase()
+                                .startsWith(a.currentTarget.value)
+                          )
+                        );
+                      } else {
+                        setSearch(null);
+                      }
+                    }}
+                    className=" border-gray-100 text-3xs w-24 px-2 py-1 outline-none"
+                    type="text"
+                    placeholder="Search menu..."
+                  />
+                </label>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  className="bg-yellow-400 cursor-pointer w-10 h-10 rounded-sm flex justify-center items-center shadow-sm "
+                >
+                  <Image
+                    src="/devices/macBookPro/search_white.svg"
+                    width={12}
+                    height={12}
+                  />
+                </motion.div>
+              </div>
               <AnimatePresence>
                 {search ? (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="bg-white flex flex-col shadow rounded-sm w-72 absolute z-20 right-10 top-8 max-h-60 overflow-y-auto"
+                    className="bg-white flex flex-col shadow rounded-sm w-72 absolute z-20 right-10 top-8 max-h-52 overflow-y-auto"
                   >
                     {search.map((e) => (
                       <div
@@ -149,10 +152,10 @@ export function NavItem({
   isFooter: boolean;
 }) {
   return (
-    <motion.h1
+    <motion.p
       whileHover={{
         scale: !isFooter ? 1.1 : 1,
-        color: !isFooter ? "#fbbf24" : "#000",
+        color: !isFooter ? "#000" : "#5C5C5C",
       }}
       initial={{
         borderBottomWidth:
@@ -167,8 +170,8 @@ export function NavItem({
             : "#fff",
         color:
           context?.data.currentPageIndex === page && !isFooter
-            ? "#fbbf24"
-            : "#000",
+            ? "#000"
+            : "#5C5C5C",
       }}
       animate={{
         borderBottomWidth:
@@ -183,8 +186,8 @@ export function NavItem({
             : "#fff",
         color:
           context?.data.currentPageIndex === page && !isFooter
-            ? "#fbbf24"
-            : "#000",
+            ? "#000"
+            : "#5C5C5C",
       }}
       onClick={() =>
         context?.dispatchData({
@@ -192,14 +195,12 @@ export function NavItem({
           payload: { page: page },
         })
       }
-      className={`cursor-pointer py-2 text-center w-10 border-b-2 ${
-        context?.data.currentPageIndex === page
-          ? "text-yellow-500 font-extrabold "
-          : ""
+      className={`font-extrabold cursor-pointer py-2 text-center w-10 border-b-2  ${
+        context?.data.currentPageIndex === page ? "text-black" : "text-gray-500"
       }`}
     >
       {label}
-    </motion.h1>
+    </motion.p>
   );
 }
 

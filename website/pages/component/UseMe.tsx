@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
+import { useOnScreen } from "../../customHooks/CustomHooks";
 
 function UseMe({
   direction,
@@ -13,9 +14,6 @@ function UseMe({
   textColor: string;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
-  // Call the hook passing in ref and root margin
-  // In this case it would only be considered onScreen if more ...
-  // ... than 300px of element is visible.
   const onScreen = useOnScreen(ref, "-400px 100px -300px 100px");
 
   return (
@@ -23,9 +21,14 @@ function UseMe({
       <div className="bg-red-700" ref={ref}>
         {onScreen ? (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{
+              opacity: 1,
+              scaleX: 1,
+              originX: 0,
+            }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.7 }}
             className={`${bgColor} ${textColor} absolute w-28 h-8 flex justify-center items-center text-white text-xs font-semibold opacity-60  ${
               direction === "RIGHT"
                 ? "rounded-r-full rounded-t-full"
@@ -38,31 +41,6 @@ function UseMe({
       </div>
     </AnimatePresence>
   );
-  // Hook
-  function useOnScreen(ref: any, rootMargin = "0px") {
-    // State and setter for storing whether element is visible
-    const [isIntersecting, setIntersecting] = useState(false);
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          // Update our state when observer callback fires
-          if (entry.isIntersecting) setIntersecting(entry.isIntersecting);
-        },
-        {
-          rootMargin,
-        }
-      );
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-      return () => {
-        observer.unobserve(ref.current);
-      };
-    }, []); // Empty array ensures that effect is only run on mount and unmount
-
-    return isIntersecting;
-  }
 }
 
 export default UseMe;

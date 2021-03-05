@@ -13,7 +13,7 @@ function IntroImage() {
         />
       </div>
       <div className="absolute top-52 right-96 z-10">
-        <h2 className="font-extrabold text-3xl">ADDIDAS</h2>
+        <p className="font-extrabold text-3xl">ADDIDAS</p>
         <p className="font-semibold text-sm">Walk nice run fast.</p>
         <p className="font-semibold text-sm">Be strong.</p>
       </div>
@@ -24,7 +24,7 @@ function IntroImage() {
           objectFit="cover"
         />
         <div className="z-10 p-8 text-white">
-          <h2 className="font-extrabold text-2xl">Nike Air Force</h2>
+          <p className="font-extrabold text-2xl">Nike Air Force</p>
           <p className="font-semibold text-xs">200CAD</p>
         </div>
       </div>

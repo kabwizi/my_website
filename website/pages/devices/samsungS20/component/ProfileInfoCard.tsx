@@ -27,7 +27,7 @@ function ProfileInfoCard({
           <Image src={leftIcon} width={20} height={20} />
         </div>
         <div className="flex-1">
-          <h2 className="font-bold text-gray-600">{label}</h2>
+          <p className="font-bold text-gray-600">{label}</p>
           <p className="font-bold">{subLabel}</p>
         </div>
         {showEditButton ? (

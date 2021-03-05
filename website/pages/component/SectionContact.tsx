@@ -29,7 +29,7 @@ function SectionContact({
 
   return (
     <section ref={contactRef} className="relative z-10 flex justify-center">
-      <div className="screenMaxSize mt-16 mb-40 w-full">
+      <div className="screenMaxSize mt-16 mb-20 w-full">
         {context ? (
           <BigTitle
             textColor="CONTACT"
@@ -47,11 +47,12 @@ function SectionContact({
 
         <div className="flex flex-col-reverse gap-16 lg:flex-row mt-16">
           {/**=============== left side =============== */}
-          <div className="flex-1 flex  flex-row lg:flex-col justify-around items-center">
+          <div className="flex-1 flex  flex-row lg:flex-col justify-around items-center flex-wrap gap-10">
             <motion.a
               href="https://github.com/kabwizi?tab=repositories"
               rel="noopener"
               target="_blank"
+              aria-label="Github"
               whileHover={{ scale: 1.2 }}
               className="baseButtonWitheStyleTailwind smallButtonSize"
             >
@@ -66,6 +67,7 @@ function SectionContact({
               href="https://www.linkedin.com/in/serge-kabwizi-16629a127/"
               rel="noopener"
               target="_blank"
+              aria-label="Linkedin"
               whileHover={{ scale: 1.2 }}
               className="baseButtonWitheStyleTailwind smallButtonSize"
             >
@@ -80,6 +82,7 @@ function SectionContact({
               href="mailto:kabwiziserge@gmail.com"
               target="_blank"
               whileHover={{ scale: 1.2 }}
+              aria-label="E-mail me"
               className="baseButtonWitheStyleTailwind smallButtonSize"
             >
               <Image
@@ -158,6 +161,10 @@ function SectionContact({
                       .child.child4!
               }
               file={file}
+              label={
+                context?.data.language[context.data.languageIndex].section9
+                  .label.label4!
+              }
               setValue={setFile}
             />
             <motion.div

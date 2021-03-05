@@ -51,13 +51,13 @@ function ChatListCard({ data }: { data: IUser }) {
       </div>
 
       <div className="w-full flex flex-col justify-center">
-        <h2 className="text-sm font-bold">{data.fullName}</h2>
+        <p className="text-sm font-bold">{data.fullName}</p>
         <p
           className={`text-2xs ${
             data.messageList &&
             data.messageList[data.messageList?.length - 1].read
-              ? "text-gray-500"
-              : "text-purple-500 "
+              ? "text-gray-600"
+              : "text-purple-600 "
           }`}
         >
           {data.messageList &&
@@ -72,7 +72,7 @@ function ChatListCard({ data }: { data: IUser }) {
         </p>
       </div>
       <div className="flex-none flex flex-col justify-around items-end">
-        <p className="text-2xs text-gray-500">
+        <p className="text-2xs text-gray-600">
           {data.messageList !== undefined
             ? formatedDate(data.messageList[data.messageList.length - 1].date)
             : null}

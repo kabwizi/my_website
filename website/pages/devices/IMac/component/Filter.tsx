@@ -11,7 +11,7 @@ function Filter() {
   return (
     <div className="py-8 pr-24 space-y-3 text-2xs">
       <div className="space-y-2">
-        <h2 className="font-extrabold text-5xl pb-10">Filter</h2>
+        <p className="font-extrabold text-5xl pb-10">Filter</p>
         <p
           onClick={() => {
             if (context)
@@ -315,7 +315,7 @@ function Filter() {
         ))}
       </div>
       <div>
-        <h3 className="font-extrabold text-lg">PRICE</h3>
+        <p className="font-extrabold text-lg">PRICE</p>
         <input
           onChange={(e) =>
             context?.dispatchData({

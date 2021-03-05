@@ -12,5 +12,5 @@
   @apply w-10 h-10;
 }
 .languageGroupCard {
-  @apply bg-white flex gap-8 rounded-md shadow-lg p-5;
+  @apply bg-white flex gap-8 rounded-md shadow-lg p-5 flex-wrap justify-center;
 }

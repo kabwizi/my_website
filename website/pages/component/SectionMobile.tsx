@@ -8,13 +8,12 @@ import SmallTitle from "./SmallTitle";
 import IPhone12Context from "../devices/iPhone12/IPhone12Context";
 import SamsungS7Edge from "../devices/samsungS7Edge/SamsungS7Edge";
 import { useData } from "../WebsiteMainContext";
-import UseMe from "./UseMe";
 
 function SectionMobile() {
   const context = useData();
 
   return (
-    <>
+    <div>
       {context ? (
         <BigTitle
           textColor="WHITE"
@@ -34,12 +33,6 @@ function SectionMobile() {
         {/**=============== COL 1 ==============**/}
         <div>
           <div className="relative flex justify-center">
-            <UseMe
-              direction="RIGHT"
-              position="-top-8 -right-12"
-              textColor="text-white"
-              bgColor="bg-pink-400 bg-opacity-50"
-            />
             <IPhone12Context>
               <IPhone12 />
             </IPhone12Context>
@@ -61,12 +54,6 @@ function SectionMobile() {
               ) : null}
             </div>
             <div className="flex justify-center relative">
-              <UseMe
-                direction="RIGHT"
-                position="-top-8 -right-12"
-                textColor="text-white"
-                bgColor="bg-SamsungS20Color-samsungS500Orange  bg-opacity-50"
-              />
               <SamsungS20 />
             </div>
           </div>
@@ -89,12 +76,6 @@ function SectionMobile() {
             ) : null}
           </div>
           <div className="flex justify-center relative">
-            <UseMe
-              direction="LEFT"
-              position="-top-10 -left-12"
-              textColor="text-white"
-              bgColor="bg-Purple-darkest bg-opacity-90"
-            />
             <SamsungS20U />
           </div>
           <div>
@@ -114,17 +95,17 @@ function SectionMobile() {
               ) : null}
             </div>
             <div className="relative flex justify-center items-center">
-              <div className="relative z-10 right-10 ">
+              <div className="relative z-10 right-4 -bottom-6">
                 <IPhoneSE />
               </div>
-              <div className="absolute -right-4 md:right-20 lg:-right-36 -top-10 -z-10">
+              <div className="absolute -right-8 md:right-20 lg:-right-36 -top-8 -z-10">
                 <SamsungS7Edge />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

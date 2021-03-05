@@ -120,7 +120,7 @@
 
 /*=================TOP MENU==================*/
 .topMenuCard:hover .topMenuCardText {
-  height: 110px;
+  height: 125px;
   transition: height 0.5s cubic-bezier(0, 0.69, 0.26, 1.16);
 }
 

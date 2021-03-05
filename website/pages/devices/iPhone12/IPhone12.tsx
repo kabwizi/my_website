@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import style from "../../../styles/scroller.module.css";
+import UseMe from "../../component/UseMe";
 import Navigation from "./component/Navigation";
 import { useData } from "./IPhone12Context";
 
@@ -8,7 +9,7 @@ function IPhone12() {
   const context = useData();
 
   useEffect(() => {
-    const intervale = setInterval(() => {
+    const intervale = setTimeout(() => {
       context?.dispatchData({
         type: "CHANGE_SHOW_VOLUME_STATE",
         payload: { showVolumeState: false },
@@ -20,7 +21,13 @@ function IPhone12() {
   }, [context && context.data.volume]);
 
   return (
-    <div className={`iPh12 ${style.noScrollbar}`}>
+    <div className={`relative iPh12 ${style.noScrollbar}`}>
+      <UseMe
+        direction="RIGHT"
+        position="-top-8 -right-28"
+        textColor="text-white"
+        bgColor="bg-pink-400 bg-opacity-50"
+      />
       <div className="iPh12-screen select-none">
         <Navigation />
       </div>

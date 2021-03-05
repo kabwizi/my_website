@@ -27,7 +27,11 @@ export function InstagramImg({ img }: { img: string }) {
     <div className="overflow-hidden">
       <motion.div whileHover={{ scale: 1.2 }} className="relative w-32 h-32">
         <Image src={img} layout="fill" objectFit="cover" />
-        <motion.div
+        <motion.a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram image"
           initial={{ opacity: 0.5 }}
           whileHover={{ opacity: 0.1 }}
           className="bg-black absolute inset-0 flex justify-center items-center"
@@ -37,7 +41,7 @@ export function InstagramImg({ img }: { img: string }) {
             width={15}
             height={15}
           />
-        </motion.div>
+        </motion.a>
       </motion.div>
     </div>
   );

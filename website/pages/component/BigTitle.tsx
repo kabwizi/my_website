@@ -29,7 +29,7 @@ function BigTitle({
         {icon2 ? <Image src={icon2} width={70} height={70} /> : null}
         {icon3 ? <Image src={icon3} width={70} height={70} /> : null}
       </div>
-      <h2 className="text-6xl font-black">{title}</h2>
+      <h2 className="text-4xl sm:text-6xl font-black">{title}</h2>
       <p className={`mt-4 font-semibold ${returnTextColor(textColor)}`}>
         {description}
       </p>

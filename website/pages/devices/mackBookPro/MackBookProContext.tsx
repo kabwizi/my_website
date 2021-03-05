@@ -143,6 +143,30 @@ const ingredients = [
   "Mayonnaise",
 ];
 const category = ["lunch", "soup", "eat"];
+const comment = [
+  {
+    comment:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
+    date: new Date("2021-01-01T10:00:00"),
+    user: {
+      email: "someEmail@gmail.com",
+      firstName: "Yliun",
+      lastName: "Ni",
+      src: "/devices/macBookPro/img/user_picture_1.png",
+    },
+  },
+  {
+    comment:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
+    date: new Date("2021-01-01T10:00:00"),
+    user: {
+      email: "someEmail@gmail.com",
+      firstName: "Philip",
+      lastName: "Ambroise",
+      src: "/devices/macBookPro/img/user_picture_2.png",
+    },
+  },
+];
 
 const initialState: IData = {
   currentPageIndex: 0,
@@ -169,19 +193,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
     {
       user: admin,
@@ -202,19 +214,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
     {
       user: admin,
@@ -235,19 +235,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
     {
       user: admin,
@@ -268,19 +256,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
     /**horizontal */
     {
@@ -302,19 +278,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
     /** DINNER*/
     {
@@ -336,19 +300,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
     {
       user: admin,
@@ -369,19 +321,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
     /**lunch */
     {
@@ -403,19 +343,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
     {
       user: admin,
@@ -436,19 +364,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
     {
       user: admin,
@@ -469,19 +385,7 @@ const initialState: IData = {
         "/devices/macBookPro/img/description_1.png",
         "/devices/macBookPro/img/description_2.png",
       ],
-      comment: [
-        {
-          comment:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna morbi nunc diam neque porttitor",
-          date: new Date("2021-01-01T10:00:00"),
-          user: {
-            email: "someEmail@gmail.com",
-            firstName: "Phillip",
-            lastName: "Mackin",
-            src: "/devices/1.jpg",
-          },
-        },
-      ],
+      comment: comment,
     },
   ],
 };

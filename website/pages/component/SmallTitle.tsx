@@ -17,7 +17,7 @@ function SmallTitle({
       {icon ? (
         <Image src={icon} width={25} height={25} alt="small title icon" />
       ) : null}
-      <h3 className="text-3xl font-black">{title}</h3>
+      <h3 className="text-xl sm:text-3xl font-black">{title}</h3>
       <p
         className={`mt-4 font-semibold ${
           textColor === "WHITE" ? "text-gray-400" : "text-gray-500"

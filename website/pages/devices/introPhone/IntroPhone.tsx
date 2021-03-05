@@ -85,7 +85,7 @@ function IntroPhone() {
           <div className="camera-reflet"></div>
         </div>
       </div>
-      <div className="IntroPhone p-2 shadow-2xl">
+      <div className="IntroPhone p-2 IntoPhoneShadow">
         <motion.div
           variants={parentVariant}
           initial="hidden"

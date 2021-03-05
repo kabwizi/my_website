@@ -2,10 +2,17 @@ import React from "react";
 import Navigation from "./component/Navigation";
 import style from "../../../styles/scroller.module.css";
 import SamsungS20UContext from "./SamsungS20UContext";
+import UseMe from "../../component/UseMe";
 
 function SamsungS20U() {
   return (
-    <div className={`samS20U-border ${style.noScrollbar}`}>
+    <div className={`relative samS20U-border ${style.noScrollbar}`}>
+      <UseMe
+        direction="LEFT"
+        position="-top-10 -left-28"
+        textColor="text-white"
+        bgColor="bg-Purple-darkest bg-opacity-90"
+      />
       <div className="samS20U">
         <div className="samS20U-screen select-none overflow-y-scroll">
           <SamsungS20UContext>

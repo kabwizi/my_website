@@ -39,14 +39,14 @@ function BigMenuHorizontal({ recipe }: { recipe: IRecipe }) {
           <Level level={recipe.level} />
           <Time time={recipe.time} />
         </div>
-        <h2 className="font-semibold text-2xs mt-1">{recipe.title}</h2>
+        <p className="font-semibold text-2xs mt-1">{recipe.title}</p>
         <div
           className="text-3xs text-gray-500 h-20 overflow-hidden mb-1"
           dangerouslySetInnerHTML={{
             __html: recipe.description,
           }}
         ></div>
-        <h2 className="font-semibold text-2xs mt-1">Ingredients</h2>
+        <p className="font-semibold text-2xs mt-1">Ingredients</p>
         <div className="flex gap-x-1 flex-wrap">
           {recipe.ingredients.map((e, index) => (
             <p key={index} className="text-3xs text-gray-500">

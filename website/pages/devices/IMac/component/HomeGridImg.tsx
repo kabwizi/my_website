@@ -9,7 +9,7 @@ function HomeGridImg() {
 
   return (
     <div className="mt-16">
-      <h3 className="text-2xl font-bold">Walking shoes</h3>
+      <p className="text-2xl font-bold">Walking shoes</p>
       <div className="homeGridSection mt-4">
         <div className="homeGridSection-img-left-top relative">
           <Image

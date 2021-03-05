@@ -15,9 +15,8 @@ import Head from "next/head";
 
 export default function Home() {
   const contactRef = useRef<HTMLDivElement | null>(null);
-
   return (
-    <div className=" flex flex-col items-center overflow-x-hidden">
+    <div className="flex flex-col items-center overflow-x-hidden">
       <Head>
         <title>Kabwizi Serge | Portfolio</title>
         <link rel="shortcut icon" type="image/svg" href="/main/language.svg" />

@@ -32,7 +32,7 @@ function Album({
         <Image src={album.src} layout="fill" objectFit="cover" />
       </div>
       <div className="text-center">
-        <h2 className="font-bold text-xs">{album.title}</h2>
+        <p className="font-bold text-xs">{album.title}</p>
         <p className="text-gray-500 text-2xs">{album.date.getFullYear()}</p>
       </div>
     </motion.div>

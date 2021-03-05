@@ -1,6 +1,9 @@
 import React from "react";
+import { useWindowsSize } from "../../customHooks/CustomHooks";
 
 function BackgroundSvg() {
+  const isSmallScreenSize = useWindowsSize("(max-width:900px)");
+
   return (
     <svg
       className="absolute backgroundSvg -z-10 w-full h-full top-0"
@@ -9,7 +12,7 @@ function BackgroundSvg() {
       height="900"
       fill="none"
       preserveAspectRatio="none"
-      viewBox="0 0 2840 900"
+      viewBox={isSmallScreenSize ? "800 0 700 900" : "0 0 2840 900"}
     >
       <mask
         id="mask0"

@@ -93,9 +93,9 @@ export function ChatAppBar() {
           />
         ) : null}
         <div>
-          <h2 className="text-2xs font-semibold">
+          <p className="text-2xs font-semibold">
             {context?.data.user?.fullName}
-          </h2>
+          </p>
           <p className="text-3xs">
             {context?.data.user?.active ? "active" : "not active"}
           </p>

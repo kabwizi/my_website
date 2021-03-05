@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import FingerprintSVG from "./FingerprintSVG";
+import { useOnScreen } from "../../../../customHooks/CustomHooks";
 
 function InAppPurchaseCard() {
   const inAppPurshaceDivRef = useRef<HTMLDivElement | null>(null);
@@ -75,32 +76,6 @@ function InAppPurchaseCard() {
       ) : null}
     </motion.div>
   );
-
-  // Hook
-  function useOnScreen(ref: any, rootMargin = "0px") {
-    // State and setter for storing whether element is visible
-    const [isIntersecting, setIntersecting] = useState(false);
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          // Update our state when observer callback fires
-          if (entry.isIntersecting) setIntersecting(entry.isIntersecting);
-        },
-        {
-          rootMargin,
-        }
-      );
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-      return () => {
-        observer.unobserve(ref.current);
-      };
-    }, []); // Empty array ensures that effect is only run on mount and unmount
-
-    return isIntersecting;
-  }
 }
 
 export default InAppPurchaseCard;

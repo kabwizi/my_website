@@ -13,6 +13,7 @@ export interface IMusic {
   audio: string;
   duration: string;
   albumIndex: number;
+  musicIndex: number;
 }
 
 export interface IAlbum {
@@ -192,6 +193,7 @@ const artist: IArtist[] = [
             title: "All for you",
             duration: "02:25",
             albumIndex: 0,
+            musicIndex: 0,
           },
           {
             src: "/devices/iPhone12/img/jazz_2.png",
@@ -199,6 +201,7 @@ const artist: IArtist[] = [
             title: "Dancing all night",
             duration: "03:13",
             albumIndex: 0,
+            musicIndex: 1,
           },
           {
             src: "/devices/iPhone12/img/jazz_3.png",
@@ -206,6 +209,7 @@ const artist: IArtist[] = [
             title: "Joyeux of sun",
             duration: "01:44",
             albumIndex: 0,
+            musicIndex: 2,
           },
           {
             src: "/devices/iPhone12/img/jazz_4.png",
@@ -213,6 +217,7 @@ const artist: IArtist[] = [
             title: "Keep it simple",
             duration: "02:40",
             albumIndex: 0,
+            musicIndex: 3,
           },
         ],
       },
@@ -227,6 +232,7 @@ const artist: IArtist[] = [
             title: "Beautiful",
             duration: "01:48",
             albumIndex: 1,
+            musicIndex: 0,
           },
           {
             src: "/devices/iPhone12/img/soul_2.png",
@@ -234,6 +240,7 @@ const artist: IArtist[] = [
             title: "In the rain",
             duration: "01:31",
             albumIndex: 1,
+            musicIndex: 1,
           },
         ],
       },

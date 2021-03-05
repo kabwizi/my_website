@@ -29,7 +29,7 @@ function SideBar() {
             height={10}
           />
         </div>
-        <h3 className="font-extrabold text-lg mt-6 mb-5">My card</h3>
+        <p className="font-extrabold text-lg mt-6 mb-5">My card</p>
         <div className="space-y-4">
           {context && context.data.bag.length > 0 ? (
             context?.data.bag.map((e, index) => (

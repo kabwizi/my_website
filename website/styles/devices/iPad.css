@@ -74,6 +74,7 @@
 }
 .introBackground {
   height: 550px;
+  width: 100%;
 }
 
 .strokText-black {
@@ -103,14 +104,19 @@
 }
 
 /*==================BUTTON=================*/
-.parentButton:hover .childButton {
+.parentButton:hover .childButtonRigthAnimation {
   animation-duration: 0.3s;
-  animation-name: movingArrow;
+  animation-name: movingArrowRigth;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-
-@keyframes movingArrow {
+.parentButton:hover .childButtonTopAnimation {
+  animation-duration: 0.3s;
+  animation-name: movingArrowTop;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes movingArrowRigth {
   from {
     transform: translateX(-2px);
   }
@@ -119,10 +125,30 @@
     transform: translateX(2px);
   }
 }
+@keyframes movingArrowTop {
+  from {
+    transform: translateY(-2px);
+  }
 
-div {
-  animation-duration: 0.1s;
-  animation-name: changewidth;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  to {
+    transform: translateY(2px);
+  }
+}
+/*==========COACHE SOCIALE MEDIA ANIMATION=============*/
+.childCoachSocialMedia {
+  opacity: 0;
+  transition-property: opacity scale;
+  transform: scale(1, 0.5);
+  transition-duration: 0.3s;
+  transform-origin: bottom;
+}
+.parentCoachContainer:hover .childCoachSocialMedia {
+  opacity: 1;
+  transition-property: opacity scale;
+  transform: scale(1, 1);
+  transition-duration: 0.3s;
+  transform-origin: bottom;
+}
+.parentCoachContainer:hover {
+  cursor: pointer;
 }

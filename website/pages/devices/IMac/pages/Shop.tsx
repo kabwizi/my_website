@@ -26,6 +26,10 @@ function Shop() {
         context.data.filters.brand,
         currentProductList
       );
+      tempProductList = filterPrice(
+        context.data.filters.price,
+        tempProductList
+      );
       tempProductList = filterColor(
         context.data.filters.color,
         tempProductList
@@ -96,12 +100,10 @@ function Shop() {
             <div className="grid grid-cols-3 gap-4 ">
               {context && searchProduct.trim().length > 0
                 ? productList
-                    .filter(
-                      (e) =>
-                        e.title
-                          .toLocaleLowerCase()
-                          .startsWith(searchProduct.toLocaleLowerCase()) &&
-                        e.price < context.data.priceRange
+                    .filter((e) =>
+                      e.title
+                        .toLocaleLowerCase()
+                        .startsWith(searchProduct.toLocaleLowerCase())
                     )
                     .map((e, index) => (
                       <div key={index}>
@@ -206,6 +208,9 @@ function Shop() {
     } else {
       return productList.filter((e) => e.brand == brand);
     }
+  }
+  function filterPrice(price: number, productList: IProduct[]) {
+    return productList.filter((e) => e.price <= price);
   }
 }
 

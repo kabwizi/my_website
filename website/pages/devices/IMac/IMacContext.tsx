@@ -49,6 +49,7 @@ export interface IFilters {
   typeOfShoes: typeOfShoes;
   brand: string;
   sexe: allSex;
+  price: number;
 }
 
 export interface IData {
@@ -58,7 +59,6 @@ export interface IData {
   bag: IProduct[];
   showBag: boolean;
   total: number;
-  priceRange: number;
   color: string[];
   size: number[];
   showLogin: boolean;
@@ -126,7 +126,7 @@ function reducer(state: IData, action: IAction) {
     case "CHANGE_PRICE_RANGE":
       return {
         ...state,
-        priceRange: action.payload.priceRange!,
+        filters: action.payload.filters!,
       };
     case "CHANGE_FILTERS":
       return {
@@ -177,7 +177,6 @@ const initialState: IData = {
   bag: [],
   showBag: false,
   total: 0,
-  priceRange: 500,
   showLogin: false,
   size: [6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13],
   color: [
@@ -195,6 +194,7 @@ const initialState: IData = {
     color: [],
     size: [],
     sexe: "ALL",
+    price: 500,
   },
   product: [
     {

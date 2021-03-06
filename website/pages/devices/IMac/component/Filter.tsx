@@ -18,13 +18,7 @@ function Filter() {
               context.dispatchData({
                 type: "CHANGE_FILTERS",
                 payload: {
-                  filters: {
-                    brand: "ALL",
-                    color: context.data.filters.color,
-                    sexe: context.data.filters.sexe,
-                    size: context.data.filters.size,
-                    typeOfShoes: context.data.filters.typeOfShoes,
-                  },
+                  filters: { ...context.data.filters, brand: "ALL" },
                 },
               });
           }}
@@ -41,11 +35,8 @@ function Filter() {
                 type: "CHANGE_FILTERS",
                 payload: {
                   filters: {
+                    ...context.data.filters,
                     brand: "NIKE",
-                    color: context.data.filters.color,
-                    sexe: context.data.filters.sexe,
-                    size: context.data.filters.size,
-                    typeOfShoes: context.data.filters.typeOfShoes,
                   },
                 },
               });
@@ -63,11 +54,8 @@ function Filter() {
                 type: "CHANGE_FILTERS",
                 payload: {
                   filters: {
+                    ...context.data.filters,
                     brand: "ADIDAS",
-                    color: context.data.filters.color,
-                    sexe: context.data.filters.sexe,
-                    size: context.data.filters.size,
-                    typeOfShoes: context.data.filters.typeOfShoes,
                   },
                 },
               });
@@ -87,11 +75,8 @@ function Filter() {
                 type: "CHANGE_FILTERS",
                 payload: {
                   filters: {
+                    ...context.data.filters,
                     brand: "VANS",
-                    color: context.data.filters.color,
-                    sexe: context.data.filters.sexe,
-                    size: context.data.filters.size,
-                    typeOfShoes: context.data.filters.typeOfShoes,
                   },
                 },
               });
@@ -108,13 +93,7 @@ function Filter() {
               context.dispatchData({
                 type: "CHANGE_FILTERS",
                 payload: {
-                  filters: {
-                    brand: "FILS",
-                    color: context.data.filters.color,
-                    sexe: context.data.filters.sexe,
-                    size: context.data.filters.size,
-                    typeOfShoes: context.data.filters.typeOfShoes,
-                  },
+                  filters: { ...context.data.filters, brand: "FILS" },
                 },
               });
           }}
@@ -130,13 +109,7 @@ function Filter() {
               context.dispatchData({
                 type: "CHANGE_FILTERS",
                 payload: {
-                  filters: {
-                    brand: "OTHER",
-                    color: context.data.filters.color,
-                    sexe: context.data.filters.sexe,
-                    size: context.data.filters.size,
-                    typeOfShoes: context.data.filters.typeOfShoes,
-                  },
+                  filters: { ...context.data.filters, brand: "OTHER" },
                 },
               });
           }}
@@ -156,13 +129,7 @@ function Filter() {
                 context.dispatchData({
                   type: "CHANGE_FILTERS",
                   payload: {
-                    filters: {
-                      brand: context.data.filters.brand,
-                      color: context.data.filters.color,
-                      sexe: context.data.filters.sexe,
-                      size: context.data.filters.size,
-                      typeOfShoes: "ALL",
-                    },
+                    filters: { ...context.data.filters, typeOfShoes: "ALL" },
                   },
                 });
             }}
@@ -180,13 +147,7 @@ function Filter() {
                 context.dispatchData({
                   type: "CHANGE_FILTERS",
                   payload: {
-                    filters: {
-                      brand: context.data.filters.brand,
-                      color: context.data.filters.color,
-                      sexe: context.data.filters.sexe,
-                      size: context.data.filters.size,
-                      typeOfShoes: "RUNING",
-                    },
+                    filters: { ...context.data.filters, typeOfShoes: "RUNING" },
                   },
                 });
             }}
@@ -205,10 +166,7 @@ function Filter() {
                   type: "CHANGE_FILTERS",
                   payload: {
                     filters: {
-                      brand: context.data.filters.brand,
-                      color: context.data.filters.color,
-                      sexe: context.data.filters.sexe,
-                      size: context.data.filters.size,
+                      ...context.data.filters,
                       typeOfShoes: "WALKING",
                     },
                   },
@@ -236,11 +194,8 @@ function Filter() {
                   type: "CHANGE_FILTERS",
                   payload: {
                     filters: {
-                      brand: context.data.filters.brand,
-                      color: context.data.filters.color,
-                      sexe: context.data.filters.sexe,
+                      ...context.data.filters,
                       size: size.filter((element) => element !== e),
-                      typeOfShoes: context.data.filters.typeOfShoes,
                     },
                   },
                 });
@@ -249,13 +204,7 @@ function Filter() {
                   context.dispatchData({
                     type: "CHANGE_FILTERS",
                     payload: {
-                      filters: {
-                        brand: context.data.filters.brand,
-                        color: context.data.filters.color,
-                        sexe: context.data.filters.sexe,
-                        size: [...prev, e],
-                        typeOfShoes: context.data.filters.typeOfShoes,
-                      },
+                      filters: { ...context.data.filters, size: [...prev, e] },
                     },
                   });
                   return [...prev, e];
@@ -282,11 +231,8 @@ function Filter() {
                   type: "CHANGE_FILTERS",
                   payload: {
                     filters: {
-                      brand: context.data.filters.brand,
+                      ...context.data.filters,
                       color: color.filter((element) => element !== e),
-                      sexe: context.data.filters.sexe,
-                      size: context.data.filters.size,
-                      typeOfShoes: context.data.filters.typeOfShoes,
                     },
                   },
                 });
@@ -296,11 +242,8 @@ function Filter() {
                     type: "CHANGE_FILTERS",
                     payload: {
                       filters: {
-                        brand: context.data.filters.brand,
+                        ...context.data.filters,
                         color: [...prev, e],
-                        sexe: context.data.filters.sexe,
-                        size: context.data.filters.size,
-                        typeOfShoes: context.data.filters.typeOfShoes,
                       },
                     },
                   });
@@ -320,7 +263,12 @@ function Filter() {
           onChange={(e) =>
             context?.dispatchData({
               type: "CHANGE_PRICE_RANGE",
-              payload: { priceRange: Number(e.target.value) },
+              payload: {
+                filters: {
+                  ...context.data.filters,
+                  price: Number(e.target.value),
+                },
+              },
             })
           }
           className="slider-IMac w-full"
@@ -330,7 +278,7 @@ function Filter() {
           max="500"
         />
         <div className="flex justify-between text-2xs">
-          <p className="text-3xs">{context?.data.priceRange.toString()}</p>
+          <p className="text-3xs">{context?.data.filters.price.toString()}</p>
           <p className="text-3xs">500</p>
         </div>
       </div>

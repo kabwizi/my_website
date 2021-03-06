@@ -14,7 +14,7 @@ function UseMe({
   textColor: string;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const onScreen = useOnScreen(ref, "-400px 100px -300px 100px");
+  const onScreen = useOnScreen(ref, "-100px 100px -100px 50px");
 
   return (
     <AnimatePresence>

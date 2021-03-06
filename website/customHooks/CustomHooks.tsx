@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 
-export function useOnScreen(ref: any, rootMargin = "-300px") {
+export function useOnScreen(
+  ref: React.MutableRefObject<HTMLDivElement | null>,
+  rootMargin: string = "-300px",
+  oneTime: boolean = true
+) {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIntersecting(entry.isIntersecting);
-          observer.unobserve(ref.current);
+        if (ref.current) {
+          if (oneTime) {
+            if (entry.isIntersecting) {
+              setIntersecting(entry.isIntersecting);
+            }
+          } else {
+            setIntersecting(entry.isIntersecting);
+          }
         }
       },
       {
@@ -19,7 +28,9 @@ export function useOnScreen(ref: any, rootMargin = "-300px") {
       observer.observe(ref.current);
     }
     return () => {
-      observer.unobserve(ref.current);
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
     };
   }, []);
 

@@ -43,30 +43,30 @@ function Shop() {
     return tempProductList;
   }
 
-  useEffect(() => {
-    if (productList) filterProduct(productList);
-  }, [context && context.data.filters]);
-
   const onScreen = useOnScreen(
     loadMoreButtonRef,
-    "-250px -400px -250px -400px"
+    "-250px -400px -250px -400px",
+    false
   );
 
   useEffect(() => {
-    if (onScreen) {
-      setShowLoading(true);
-    }
+    setShowLoading(true);
     let timeOut = setTimeout(() => {
-      if (context && onScreen) {
+      if (context) {
         let tempProductList: IProduct[] = [];
-        const productToAdd: IProduct[] = filterProduct(
-          context.data.product
-        ).slice(productList.length, productList.length + 6);
-        productToAdd.forEach((product) => {
-          if (productList.filter((e) => e.id === product.id).length < 1) {
-            tempProductList.push(product);
+        const productToAdd: IProduct[] = filterProduct(context.data.product);
+
+        for (let i = 0; i < productToAdd.length; i++) {
+          if (
+            productList.filter((e) => e.id === productToAdd[i].id).length < 1
+          ) {
+            tempProductList.push(productToAdd[i]);
           }
-        });
+          if (tempProductList.length > 5) {
+            break;
+          }
+        }
+
         filterProduct(productList.concat(tempProductList));
         setShowLoading(false);
       }
@@ -76,7 +76,7 @@ function Shop() {
       setShowLoading(false);
       clearTimeout(timeOut);
     };
-  }, [onScreen]);
+  }, [onScreen, context?.data.filters]);
 
   return (
     <div className="relative z-10 mt-8 flex px-5">

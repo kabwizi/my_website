@@ -56,10 +56,8 @@ function Navbar() {
                             type: "CHANGE_FILTERS",
                             payload: {
                               filters: {
+                                ...context.data.filters,
                                 brand: "NIKE",
-                                color: context.data.filters.color,
-                                sexe: context.data.filters.sexe,
-                                size: context.data.filters.size,
                                 typeOfShoes: "RUNING",
                               },
                             },
@@ -80,10 +78,8 @@ function Navbar() {
                             type: "CHANGE_FILTERS",
                             payload: {
                               filters: {
+                                ...context.data.filters,
                                 brand: "ADIDAS",
-                                color: context.data.filters.color,
-                                sexe: context.data.filters.sexe,
-                                size: context.data.filters.size,
                                 typeOfShoes: "RUNING",
                               },
                             },
@@ -118,10 +114,8 @@ function Navbar() {
                             type: "CHANGE_FILTERS",
                             payload: {
                               filters: {
+                                ...context.data.filters,
                                 brand: "NIKE",
-                                color: context.data.filters.color,
-                                sexe: context.data.filters.sexe,
-                                size: context.data.filters.size,
                                 typeOfShoes: "WALKING",
                               },
                             },
@@ -142,10 +136,8 @@ function Navbar() {
                             type: "CHANGE_FILTERS",
                             payload: {
                               filters: {
+                                ...context.data.filters,
                                 brand: "ADIDAS",
-                                color: context.data.filters.color,
-                                sexe: context.data.filters.sexe,
-                                size: context.data.filters.size,
                                 typeOfShoes: "WALKING",
                               },
                             },
@@ -172,10 +164,8 @@ function Navbar() {
                           type: "CHANGE_FILTERS",
                           payload: {
                             filters: {
+                              ...context.data.filters,
                               brand: "NIKE",
-                              color: context.data.filters.color,
-                              sexe: context.data.filters.sexe,
-                              size: context.data.filters.size,
                               typeOfShoes: "ALL",
                             },
                           },
@@ -196,10 +186,8 @@ function Navbar() {
                           type: "CHANGE_FILTERS",
                           payload: {
                             filters: {
+                              ...context.data.filters,
                               brand: "ADIDAS",
-                              color: context.data.filters.color,
-                              sexe: context.data.filters.sexe,
-                              size: context.data.filters.size,
                               typeOfShoes: "ALL",
                             },
                           },
@@ -220,10 +208,8 @@ function Navbar() {
                           type: "CHANGE_FILTERS",
                           payload: {
                             filters: {
+                              ...context.data.filters,
                               brand: "VANS",
-                              color: context.data.filters.color,
-                              sexe: context.data.filters.sexe,
-                              size: context.data.filters.size,
                               typeOfShoes: "ALL",
                             },
                           },
@@ -244,10 +230,8 @@ function Navbar() {
                           type: "CHANGE_FILTERS",
                           payload: {
                             filters: {
+                              ...context.data.filters,
                               brand: "FILS",
-                              color: context.data.filters.color,
-                              sexe: context.data.filters.sexe,
-                              size: context.data.filters.size,
                               typeOfShoes: "ALL",
                             },
                           },
@@ -268,10 +252,8 @@ function Navbar() {
                           type: "CHANGE_FILTERS",
                           payload: {
                             filters: {
+                              ...context.data.filters,
                               brand: "OTHER",
-                              color: context.data.filters.color,
-                              sexe: context.data.filters.sexe,
-                              size: context.data.filters.size,
                               typeOfShoes: "ALL",
                             },
                           },

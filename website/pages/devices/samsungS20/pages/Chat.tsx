@@ -13,7 +13,6 @@ function Chat() {
   const scrollDiv = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    messageRef.current?.focus();
     scrollDiv.current?.scrollTo({
       behavior: "smooth",
       top: scrollDiv.current.scrollHeight,

@@ -12,8 +12,8 @@ function TopAppInfo() {
         />
       </div>
       <div className="flex flex-col justify-between">
-        <p className="font-semibold">Titre de l'app</p>
-        <p className="text-xs text-green-700 font-semibold">Fournisseur</p>
+        <p className="font-semibold">Nadoré</p>
+        <p className="text-xs text-green-700 font-semibold">Nadoré Etr.</p>
         <p className="text-xs text-gray-500">Achats dans l'application</p>
       </div>
     </div>

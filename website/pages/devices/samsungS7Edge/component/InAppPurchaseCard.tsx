@@ -39,7 +39,7 @@ function InAppPurchaseCard() {
               </div>
             </div>
             <div className="flex justify-between w-full mt-1">
-              <p className="text-xs">TITRE DE L'APP</p>
+              <p className="text-xs">Nadoré</p>
               <p className="text-xs">1,64 $ CA</p>
             </div>
           </div>

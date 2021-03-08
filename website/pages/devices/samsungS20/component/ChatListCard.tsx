@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { IMessage, IUser } from "../SamsungS20Context";
 import { useData } from "../SamsungS20Context";
@@ -6,10 +6,12 @@ import { motion } from "framer-motion";
 
 function ChatListCard({ data }: { data: IUser }) {
   const context = useData();
+  const [messageNotRead, setMessageNotRead] = useState<IMessage[] | undefined>(
+    undefined
+  );
 
-  let messageNotRead: IMessage[] | undefined;
   useEffect(() => {
-    messageNotRead = data.messageList?.filter((e) => e.read === false);
+    setMessageNotRead(data.messageList?.filter((e) => e.read === false));
   }, []);
   function formatedDate(date: Date) {
     if (date.getDate() === new Date().getDate()) {
@@ -77,7 +79,7 @@ function ChatListCard({ data }: { data: IUser }) {
             ? formatedDate(data.messageList[data.messageList.length - 1].date)
             : null}
         </p>
-        {messageNotRead && messageNotRead.length > 0 && messageNotRead ? (
+        {messageNotRead && messageNotRead.length > 0 ? (
           <div className="bg-purple-400 rounded-full text-3xs w-3 h3 text-white text-center">
             {messageNotRead.length.toString()}
           </div>

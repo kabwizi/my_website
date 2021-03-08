@@ -13,7 +13,7 @@ function TopAppInfo() {
       </div>
       <div className="flex flex-col justify-between">
         <div>
-          <p className="font-bold">Titre de l'app</p>
+          <p className="font-bold">Find place</p>
           <p className="text-xs text-gray-500">In app purchase showcase</p>
         </div>
         <div className="flex justify-between">

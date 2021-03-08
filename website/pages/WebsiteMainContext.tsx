@@ -171,7 +171,7 @@ const initialState: IData = {
         parent: {
           title: "Développeur Mobile & Web",
           description:
-            "Bonjour! Je me nomme Serge Kabwizi. Je suis un programeur indépendant full stack et je me specialise dans la conception d’application mobile et de site web sur mesure.",
+            "Bonjour! Je me nomme Serge Kabwizi. Je suis un programmeur indépendant full stack et je me specialise dans la conception d’application mobile et de site web sur mesure.",
           buttonText: "Contactez-moi",
         },
       },
@@ -185,7 +185,7 @@ const initialState: IData = {
           child1: {
             title: "Site web",
             description:
-              "Offrez-vous la visibilité que vous méritez grâce à un site web unique qui représente au mieux votre savoir faire, votre vision, votre différence et vos valeurs.",
+              "Offrez-vous la visibilité que vous méritez grâce à un site web unique qui représente au mieux votre savoir-faire, votre vision, votre différence et vos valeurs.",
           },
           child2: {
             title: "Mobile",
@@ -195,7 +195,7 @@ const initialState: IData = {
           child3: {
             title: "Design",
             description:
-              "Logos, icônes, image, couleur, typographie et illustrations, pour tous vos projets, je prendrai soin de vous rendre unique et inoubliable.",
+              "Logos, icônes, images, couleurs, typographies et illustrations, pour tous vos projets, je prendrai soin de vous rendre unique et inoubliable.",
           },
           child4: {
             title: "Consultation",
@@ -224,7 +224,7 @@ const initialState: IData = {
           child3: {
             title: "Paiement & publicité",
             description:
-              "C’est bien d’avoir une application mobile, mais c’est encore mieux de pouvoir générer un revenu avec. Je vous offre donc des conseils quant aux systèmes de paiement, et je m’assure que toute transaction se fasse en sécurité.",
+              "C’est bien d’avoir une application mobile, mais c’est encore mieux de pouvoir générer un revenu avec. Je vous offre donc des conseils quant aux systèmes de paiement, et je m’assure que toutes transactions se fassent en sécurité.",
           },
         },
       },
@@ -248,7 +248,7 @@ const initialState: IData = {
           child3: {
             title: "Portfolio",
             description:
-              "Que ce soit pour vous présenter ou pour présenter votre entreprise, un portfolio est sans doute le meilleur moyen. Accessible en tout temps, il est une preuve de vos compétences, votre savoir-faire ainsi que de vos services.",
+              "Que ce soit pour vous présenter ou pour présenter votre entreprise, un portfolio est sans doute le meilleur moyen. Accessible en tout temps, il est une preuve de vos compétences et de votre différence.",
           },
         },
       },
@@ -260,7 +260,7 @@ const initialState: IData = {
         },
         child: {
           child1: "Performance",
-          child2: "accessibilité",
+          child2: "Accessibilité",
           child3: "Bonne pratique",
           child4: "SEO",
         },
@@ -273,30 +273,30 @@ const initialState: IData = {
         },
         child: {
           child1: {
-            title: "Connaitre ce que vous faites",
+            title: "Apprendre à vous connaitre",
             description:
-              "La première étape de notre travail consiste à connaitre ce que vous faites, ce que vous vendez ou ce que vous voulez partager avec le reste du monde. Notre objectif à cette étape est de découvrir l'image que vous désirez projeter à votre clientèle.",
+              "La première étape de notre travail consiste à connaitre ce que vous faites, ce que vous vendez ou ce que vous voulez partager avec le reste du monde. Mon objectif à cette étape est de découvrir l'image que vous désirez projeter à votre clientèle.",
           },
           child2: {
             title: "Connaitre vos clients",
             description:
-              "Dans la deuxième étape de notre travail, nous nous renseignons sur votre public cible. Notre but est d’identifier l'image qu'ils ont actuellement de vous.",
+              "Dans la deuxième étape de mon travail, je me renseigne sur votre publique cible. Mon but est d’identifier l'image qu'ils ont actuellement ou auront de vous.",
           },
           child3: {
             title: "Prototype",
             description:
-              "Dans la troisième étape de notre travail, nous tâchons de représenter graphiquement au mieux votre savoir-faire, votre passion, votre vision par rapport aux attentes de vos clients.",
+              "Dans la troisième étape de mon travail, je m'assure de représenter graphiquement au mieux votre savoir-faire, votre passion, votre vision par rapport aux attentes de vos clients.",
           },
           child4: {
             title: "Conception",
             description:
-              "Et enfin, dans la dernière étape de notre travail, nous vous concevons un site web ou une application mobile fidèle au design retenu et à toutes les étapes précédentes.",
+              "Et enfin, dans la dernière étape de mon travail, je vous conçois un site web ou une application mobile fidèle au design retenu et à toutes les étapes précédentes.",
           },
         },
       },
       section7: {
         parent: {
-          title: "Languages",
+          title: "Langages",
           description:
             "Voici une liste non exhaustive des langages de programmation et de logiciel de développement que j’utilise la majeure partie du temps, allant du simple brouillon au design, puis à la réalisation complète du projet.",
         },
@@ -335,11 +335,11 @@ const initialState: IData = {
       sectionIntroPhoneAndWebsite: {
         phone: {
           message1:
-            "Hello, my name is Ana, I have a project for a mobile app and I am wondering if you can help me.",
+            "Hello! my name is Serge Kabwizi. I am a full stack freelance programmer and I specialize in conceiving custom mobile apps and websites.",
           message2:
-            "Hello Ana! I hope you are well. Yes of course, what are your availability for a phone or video call?",
+            "Hello Ana! I hope you are well. Yes of course, what are your availabilities for a phone or video call?",
           message3:
-            "Perfect, I finish my work at 4 p.m., time to get home, 5 p.m. are you okay?",
+            "Perfect, I finish my work at 4 p.m., by the time I get home, 5 p.m. is best. Does that work with you?",
           message4: "A video call.",
           message5: "Yes that's fine with me, see you soon.",
         },
@@ -362,7 +362,7 @@ const initialState: IData = {
         parent: {
           title: "Be visible",
           description:
-            "Whether you are a multinational, a small business or an independent, whether it is to present your services, your products, your know-how or your passion, an online presence is essential to increase your visibility, to stand out from the crowd. competition and develop a clientele.",
+            "Whether you are a multinational, a small business or an independent, whether it is to present your services, your products, your skills or your passion, an online presence is essential to increase your visibility, to stand out from the crowd and develop a clientele.",
         },
         child: {
           child1: {
@@ -378,7 +378,7 @@ const initialState: IData = {
           child3: {
             title: "Design",
             description:
-              "Logos, icons, image, color, typography and illustrations, for all your projects, I will take care of making you unique and unforgettable.",
+              "Logos, icons, images, colors, typographies and illustrations, for all your projects, I will take care of making you unique and unforgettable.",
           },
           child4: {
             title: "Consultation",
@@ -391,7 +391,7 @@ const initialState: IData = {
         parent: {
           title: "Be where your customers are",
           description:
-            "Uber, Spotify, Whatsapp and Instagram, all have taken advantage of the smartphone and use it as a loyalty tool. No more middleman! You are in direct contact with your potential customers.",
+            "Uber, Spotify, Whatsapp and Instagram, all have taken advantage of the smartphone and have used it as a loyalty tool. No more middleman! You are in direct contact with your potential customers.",
         },
         child: {
           child1: {
@@ -403,7 +403,7 @@ const initialState: IData = {
           child2: {
             title: "IOS and Android",
             description:
-              "Are your customers on iPhone or Android? Are you in a budgetary constraint facing this decision? Don't worry, I take care to make your application accessible on all platforms.",
+              "Are your customers on iPhone or Android? Are you in a budgetary constraint facing this decision? Don't worry, I take care of making your application on all platforms.",
           },
           child3: {
             title: "Payment & advertising",
@@ -432,7 +432,7 @@ const initialState: IData = {
           child3: {
             title: "Portfolio",
             description:
-              "Whether it is to introduce yourself or to present your business, a portfolio is arguably the best way. Accessible at all times, it is proof of your skills, your know-how and your services.",
+              "Whether it is to introduce yourself or to present your business, a portfolio is without a doubt the best way. Accessible at all times, it is a proof of your skills and your uniqueness.",
           },
         },
       },
@@ -440,11 +440,11 @@ const initialState: IData = {
         parent: {
           title: "Make you find",
           description:
-            "Thanks to SEO (natural referencing), improve the ranking of your website in the search browser, or even better, opt for SEA (paid referencing) and become a priority in all search results.",
+            "Thanks to SEO, improve the ranking of your website in the search browser, or even better, opt for SEA and become a priority in all search results.",
         },
         child: {
           child1: "Performance",
-          child2: "accessibility",
+          child2: "Accessibility",
           child3: "Good practice",
           child4: "SEO",
         },
@@ -453,28 +453,28 @@ const initialState: IData = {
         parent: {
           title: "My process",
           description:
-            "Any project being important to me, all go through the same processes. These steps allow me to guarantee a high standard to all my customers.",
+            "All project being important to me, they all go through the same processes. These steps allow me to guarantee a high standard to all my customers.",
         },
         child: {
           child1: {
-            title: "Know what you are doing",
+            title: "Get to know you",
             description:
-              "The first step in our job is to know what you do, what you sell or what you want to share with the rest of the world. Our goal at this stage is to discover the image you want to project to your customers.",
+              "The first step in my job is to know what you do, what you sell or what you want to share with the rest of the world. My goal at this stage is to discover the image you want to project to your customers.",
           },
           child2: {
             title: "Know your customers",
             description:
-              "In the second step of our work, we learn about your target audience. Our goal is to identify the image they currently have of you.",
+              "In the second step of my work, I learn about your target audience. My goal is to identify the image they currently have or will have of you.",
           },
           child3: {
             title: "Prototype",
             description:
-              "In the third step of our work, we try to best represent your know-how, your passion, your vision in relation to the expectations of your customers.",
+              "In the third step of my work, I try to best represent your skills, your passion, your vision aligned with the expectations of your customers.",
           },
           child4: {
             title: "Design",
             description:
-              "And finally, in the last step of our work, we design a website or a mobile application faithful to the design chosen and to all the previous steps.",
+              "And finally, in the last step of my work, I make a website or a mobile application faithfully to the design chosen and to all the previous steps.",
           },
         },
       },
@@ -482,14 +482,14 @@ const initialState: IData = {
         parent: {
           title: "Languages",
           description:
-            "Here is a non-exhaustive list of the programming and development software languages ​​that I use most of the time, ranging from a simple draft to design, then to the complete realization of the project.",
+            "Here is a non-exhaustive list of the programming and development software languages ​​that I use most of the time, starting from a simple draft to a design, then to the complete realization of the project.",
         },
       },
       section8: {
         parent: {
           title: "There is no small budget, only arrangements",
           description:
-            "My first goal is your satisfaction. To do this, I offer you total transparency on my prices. My prices vary depending on the time for the completion of the project, my expertise and the level of detail you want.",
+            "My first goal is your satisfaction. For that, I offer you total transparency on my prices. My prices vary depending on the time, the complexity, my expertise and the level of detail you want for the project.",
         },
       },
       section9: {

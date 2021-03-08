@@ -32,6 +32,7 @@ function RightSide() {
           </div>
         </div>
         <Message
+          userName="Ana Gouchi Pou"
           attachment={true}
           src="/devices/introWebSite/img/anagouchi.png"
           message={
@@ -40,6 +41,7 @@ function RightSide() {
           }
         />
         <Message
+          userName="Serge Kabwizi"
           attachment={false}
           src="/devices/introWebSite/img/sergekabwizi.png"
           message={

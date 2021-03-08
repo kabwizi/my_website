@@ -5,10 +5,12 @@ function Message({
   attachment,
   src,
   message,
+  userName,
 }: {
   attachment: boolean;
   src: string;
   message: string;
+  userName: string;
 }) {
   return (
     <div className="flex items-start gap-2 border-b py-4 ">
@@ -20,7 +22,7 @@ function Message({
           <div className="flex items-center gap-1">
             <div>
               <div className="flex gap-1 items-center">
-                <p className="text-xs font-semibold">Ana Gouchi Pou</p>
+                <p className="text-xs font-semibold">{userName}</p>
                 <p className="text-2xs text-gray-500">
                   &lt;anagouchipou@gmail.com&gt;
                 </p>

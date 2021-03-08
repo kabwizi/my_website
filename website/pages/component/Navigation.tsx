@@ -23,7 +23,11 @@ function Navigation() {
               payload: { languageIndex: 0 },
             })
           }
-          className="baseButtonWitheStyleTailwind cursor-pointer smallButtonSize flex justify-center items-center font-bold"
+          className={`${
+            context?.data.languageIndex === 0
+              ? "bg-gray-800 text-white"
+              : "bg-white"
+          } flex justify-center rounded-md shadow-xl cursor-pointer smallButtonSize  items-center font-bold`}
         >
           Fr
         </motion.div>
@@ -35,7 +39,11 @@ function Navigation() {
               payload: { languageIndex: 1 },
             })
           }
-          className="baseButtonWitheStyleTailwind cursor-pointer smallButtonSize  flex justify-center items-center font-bold"
+          className={`${
+            context?.data.languageIndex === 1
+              ? "bg-gray-800  text-white"
+              : "bg-white "
+          } flex justify-center rounded-md shadow-xl cursor-pointer smallButtonSize  items-center font-bold`}
         >
           En
         </motion.div>

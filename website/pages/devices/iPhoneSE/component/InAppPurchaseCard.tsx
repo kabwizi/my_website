@@ -29,7 +29,7 @@ function InAppPurchaseCard() {
             <p className="font-bold text-xs">App store</p>
             <p className="text-blue-600 text-xs">Cancel</p>
           </div>
-          <div className="flex gap-1 mt-2 border-b pb-2">
+          <div className="flex gap-2 mt-2 border-b pb-2">
             <div className="w-16 flex justify-end">
               <div className="flex-none relative w-10 h-10">
                 <Image
@@ -41,8 +41,8 @@ function InAppPurchaseCard() {
               </div>
             </div>
             <div>
-              <p className="text-2xs font-bold">TITRE DE L'APP</p>
-              <p className="text-2xs">NOME DE L'ENTREPRESE</p>
+              <p className="text-2xs font-bold">Find place</p>
+              <p className="text-2xs">Find place inc.</p>
             </div>
           </div>
           <div className=" mt-2 flex border-b pb-2">

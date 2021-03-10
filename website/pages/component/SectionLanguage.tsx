@@ -29,7 +29,7 @@ function SectionLanguage() {
       <motion.div
         initial={{ height: "300px" }}
         animate={{ height: extend ? "" : "300px" }}
-        className={`bg-gray-50 w-full mt-7 p-5 justify-around flex flex-wrap gap-x-5 gap-y-10 overflow-y-auto shadow-inner`}
+        className={`bg-gray-50 w-full mt-7 p-5 justify-around flex flex-wrap gap-x-5 gap-y-10 fireFoxMainScrollbarY overflow-y-auto shadow-inner`}
       >
         <LanguageCard
           language={[

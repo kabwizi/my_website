@@ -43,6 +43,15 @@
   border-right: 2px solid rgb(245, 245, 245);
 }
 
+.fireFoxMainScrollbarY {
+  overflow-y: scroll;
+  scrollbar-color: #ffab48 white;
+}
+/*for firefox*/
+html {
+  overflow-y: scroll;
+  scrollbar-color: #ffab48 white;
+}
 /*===============INTRO BACKGROUND ANIMATION==================*/
 /*background svg size and position*/
 .backgroundSvg {

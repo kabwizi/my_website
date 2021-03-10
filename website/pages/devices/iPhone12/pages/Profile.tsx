@@ -4,6 +4,7 @@ import Album from "../component/Album";
 import MusicCard from "../component/MusicCard";
 import { useData } from "../IPhone12Context";
 import { motion } from "framer-motion";
+import Style from "../../../../styles/scroller.module.css";
 
 function Profile() {
   const context = useData();
@@ -12,7 +13,7 @@ function Profile() {
     <motion.div
       initial={{ opacity: 0, x: "50px" }}
       animate={{ opacity: 1, x: "0px" }}
-      className="relative h-full overflow-y-scroll overflow-x-hidden"
+      className={`${Style.fireFoxThinNoScrollbar} relative h-full overflow-y-scroll overflow-x-hidden`}
     >
       <div className="bg-pink-200 bg-opacity-30 w-52 h-52 absolute -top-32 -right-20 rounded-full transform rotate-45"></div>
       <div className="mx-2 flex items-center gap-2  py-2">
@@ -31,7 +32,9 @@ function Profile() {
       </div>
       <div className="ml-2 space-y-4 my-4">
         <h1 className="text-2xl font-bold">Album must hear</h1>
-        <div className="flex w-full overflow-x-scroll gap-2 p-1">
+        <div
+          className={`flex w-full ${Style.fireFoxThinNoScrollbar} overflow-x-scroll gap-2 p-1`}
+        >
           {context?.data.artist[context.data.track.artistIndex].album.map(
             (e, albumIndex) => (
               <motion.div key={e.title}>

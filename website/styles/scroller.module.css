@@ -7,20 +7,31 @@
 
 /*==============LITTLE BLACK SCROLL BAR================*/
 /* width */
-.scrollbarIMac ::-webkit-scrollbar {
+.thinScrollbar ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
-.scrollbarIMac Track ::-webkit-scrollbar-track {
+.thinScrollbar Track ::-webkit-scrollbar-track {
   background: #ffffff;
 }
 
 /* Handle*/
-.scrollbarIMac ::-webkit-scrollbar-thumb {
+.thinScrollbar ::-webkit-scrollbar-thumb {
   background: rgb(51, 51, 51);
 }
 
 /* Handle on hover*/
-.scrollbarIMac ::-webkit-scrollbar-thumb:hover {
+.thinScrollbar ::-webkit-scrollbar-thumb:hover {
   background: rgb(0, 0, 0);
+}
+
+.fireFoxThinScrollbarY {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
+
+.fireFoxThinNoScrollbar {
+  overflow-y: scroll;
+  scrollbar-width: none;
 }

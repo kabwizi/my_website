@@ -4,6 +4,7 @@ import CreditCard from "../component/CreditCard";
 import { useData } from "../SamsungS20UContext";
 import { AnimatePresence, motion } from "framer-motion";
 import AddNewCreditCard from "../component/AddNewCreditCard";
+import Style from "../../../../styles/scroller.module.css";
 
 function Wallet() {
   const context = useData();
@@ -14,6 +15,8 @@ function Wallet() {
         context && context.data.user.creditCard.length > 0
           ? "bg-white"
           : "bg-gray-50"
+      } ${
+        Style.fireFoxThinNoScrollbar
       } relative pt-4 pb-14 flex flex-col flex-1 gap-4 overflow-y-scroll`}
     >
       {context && context.data.user.creditCard.length > 0 ? (

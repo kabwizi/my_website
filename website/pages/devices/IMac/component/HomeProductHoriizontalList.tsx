@@ -15,7 +15,7 @@ function HomeProductHoriizontalList({
   return productList ? (
     <div className="mt-16 relative flex flex-col justify-center z-10  w-full">
       <p className="text-2xl font-bold">{label}</p>
-      <div ref={scrollDIv} className="flex gap-4 overflow-x-auto  py-4">
+      <div ref={scrollDIv} className="flex gap-4 overflow-x-auto py-4">
         {productList.map((e, index) => (
           <div key={index}>
             <HomeProductCard product={e} />

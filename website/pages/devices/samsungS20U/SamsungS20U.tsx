@@ -1,12 +1,12 @@
 import React from "react";
 import Navigation from "./component/Navigation";
-import style from "../../../styles/scroller.module.css";
+import Style from "../../../styles/scroller.module.css";
 import SamsungS20UContext from "./SamsungS20UContext";
 import UseMe from "../../component/UseMe";
 
 function SamsungS20U() {
   return (
-    <div className={`relative samS20U-border ${style.noScrollbar}`}>
+    <div className={`relative samS20U-border ${Style.noScrollbar}`}>
       <UseMe
         direction="LEFT"
         position="-top-10 -left-28"
@@ -14,7 +14,9 @@ function SamsungS20U() {
         bgColor="bg-Purple-darkest bg-opacity-90"
       />
       <div className="samS20U">
-        <div className="samS20U-screen select-none overflow-y-scroll">
+        <div
+          className={`${Style.fireFoxThinNoScrollbar} samS20U-screen select-none overflow-y-scroll`}
+        >
           <SamsungS20UContext>
             <Navigation />
           </SamsungS20UContext>

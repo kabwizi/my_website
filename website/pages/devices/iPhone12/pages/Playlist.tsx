@@ -4,6 +4,7 @@ import MusicCard from "../component/MusicCard";
 import Album from "../component/Album";
 import { useData } from "../IPhone12Context";
 import { motion } from "framer-motion";
+import Style from "../../../../styles/scroller.module.css";
 
 function Playlist() {
   const context = useData();
@@ -29,7 +30,7 @@ function Playlist() {
     <motion.div
       initial={{ opacity: 0, x: "50px" }}
       animate={{ opacity: 1, x: "0px" }}
-      className="relative h-full overflow-y-scroll overflow-x-hidden"
+      className={`${Style.fireFoxThinNoScrollbar} relative h-full overflow-y-scroll overflow-x-hidden`}
     >
       <div className="bg-pink-200 bg-opacity-30 w-52 h-52 absolute -top-32 -right-20 rounded-full transform rotate-45"></div>
       <div className=" flex flex-col items-center flex-none">
@@ -40,7 +41,9 @@ function Playlist() {
             objectFit="cover"
           />
         </div>
-        <div className="flex pl-4 w-full overflow-x-scroll gap-2 py-2">
+        <div
+          className={`flex pl-4 w-full ${Style.fireFoxThinNoScrollbar} overflow-x-scroll gap-2 py-2`}
+        >
           {context?.data.artist[context.data.track.artistIndex].album.map(
             (e, albumIndex) => (
               <div key={e.title}>

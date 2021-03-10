@@ -2,6 +2,7 @@ import React from "react";
 import ChatListCard from "../component/ChatListCard";
 import { useData } from "../SamsungS20Context";
 import { motion } from "framer-motion";
+import Style from "../../../../styles/scroller.module.css";
 
 function ChatList() {
   const context = useData();
@@ -31,13 +32,13 @@ function ChatList() {
     <motion.div
       initial={{ x: "100px" }}
       animate={{ x: "0px" }}
-      className="h-full"
+      className={`${Style.fireFoxThinNoScrollbar} h-full`}
     >
       <motion.div
         variants={parentVariant}
         initial="init"
         animate="animate"
-        className="pt-2 space-y-2 h-full overflow-scroll pb-24 "
+        className={`pt-2 space-y-2 h-full pb-24`}
       >
         {context?.data.messagesList
           .sort((a, b) =>

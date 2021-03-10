@@ -5,7 +5,7 @@ import UseMe from "../../component/UseMe";
 
 function IPad() {
   return (
-    <div className={`iPad ${Style.scrollbarIMac}`}>
+    <div className={`iPad ${Style.thinScrollbar}`}>
       <UseMe
         direction="LEFT"
         position="-top-10 -left-28"
@@ -15,7 +15,9 @@ function IPad() {
       <div className="iPad-camera">
         <div className="iPad-camera-reflet"></div>
       </div>
-      <div className="iPad-screen overflow-y-scroll overflow-x-hidden">
+      <div
+        className={`iPad-screen ${Style.fireFoxThinScrollbarY} overflow-y-scroll overflow-x-hidden`}
+      >
         <Home />
       </div>
       <div className="iPad-tBtn-container">

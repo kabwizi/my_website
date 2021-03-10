@@ -14,7 +14,7 @@ function MackBookPro() {
   }, [context?.data.currentPageIndex]);
 
   return (
-    <div className={`macP ${Style.scrollbarIMac} ${Font.fontMacBookPro}`}>
+    <div className={`macP ${Style.thinScrollbar} ${Font.fontMacBookPro}`}>
       <UseMe
         direction="RIGHT"
         position="-top-10 -right-4"
@@ -28,7 +28,7 @@ function MackBookPro() {
           </div>
           <div
             ref={bodyDivRef}
-            className="macP-screen overflow-y-scroll overflow-x-hidden"
+            className={`macP-screen ${Style.fireFoxThinScrollbarY} overflow-y-scroll overflow-x-hidden`}
           >
             <Navigation />
           </div>

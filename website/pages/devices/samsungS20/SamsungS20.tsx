@@ -1,12 +1,12 @@
 import React from "react";
 import Navigation from "./component/Navigation";
-import style from "../../../styles/scroller.module.css";
+import Style from "../../../styles/scroller.module.css";
 import SamsungS20Context from "./SamsungS20Context";
 import UseMe from "../../component/UseMe";
 
 function SamsungS20() {
   return (
-    <div className={`relative samS20-border ${style.noScrollbar}`}>
+    <div className={`relative samS20-border ${Style.noScrollbar}`}>
       <UseMe
         direction="RIGHT"
         position="-top-8 -right-24"
@@ -14,7 +14,7 @@ function SamsungS20() {
         bgColor="bg-SamsungS20Color-samsungS500Orange  bg-opacity-50"
       />
       <div className="samS20">
-        <div className="samS20-screen  overflow-hidden select-none">
+        <div className="samS20-screen overflow-hidden select-none">
           <SamsungS20Context>
             <Navigation />
           </SamsungS20Context>

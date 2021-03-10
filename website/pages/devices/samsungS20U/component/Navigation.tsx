@@ -9,6 +9,7 @@ import Home from "../pages/Home";
 import BuyMenuCard from "./BuyMenuCard";
 import { AnimatePresence, motion } from "framer-motion";
 import { IData, IAction } from "../SamsungS20UContext";
+import Style from "../../../../styles/scroller.module.css";
 
 export interface IItem {
   label: string;
@@ -46,13 +47,15 @@ function Navigation() {
         ) : null
       ) : null}
 
-      <div className="flex-1 relative overflow-y-scroll">
+      <div
+        className={`${Style.fireFoxThinNoScrollbar} flex-1 relative overflow-y-scroll`}
+      >
         {pages.map((e, index) => (
           <div
             key={index}
             className={
               index === context?.data.currentPageIndex
-                ? " flex flex-col h-full overflow-y-scroll"
+                ? `${Style.fireFoxThinNoScrollbar} flex flex-col h-full overflow-y-scroll`
                 : "hidden"
             }
           >

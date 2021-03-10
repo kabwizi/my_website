@@ -3,17 +3,20 @@ import Image from "next/image";
 import MenuCard from "../component/MenuCard";
 import { useData } from "../SamsungS20UContext";
 import { motion } from "framer-motion";
+import Style from "../../../../styles/scroller.module.css";
 
 function Profile() {
   const context = useData();
 
   return (
-    <div className="flex-1 px-2 overflow-y-scroll ">
+    <div
+      className={`${Style.fireFoxThinNoScrollbar} flex-1 px-2 overflow-y-scroll `}
+    >
       <div className="flex justify-center text-center my-4">
         <div>
           <motion.div
             whileTap={{ scale: 1.5, y: "45px" }}
-            className="cursor-pointer relative h-40 w-36 rounded-lg shadow-lg overflow-hidden mb-2"
+            className="${Style.fireFoxThinNoScrollbar} cursor-pointer relative h-40 w-36 rounded-lg shadow-lg overflow-hidden mb-2"
           >
             <Image
               src="/devices/samsungS20U/img/user.png"

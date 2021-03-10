@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import style from "../../../styles/scroller.module.css";
+import Style from "../../../styles/scroller.module.css";
 import Navigation from "./component/Navigation";
 import { useData } from "./IMacContext";
 import UseMe from "../../component/UseMe";
@@ -25,8 +25,11 @@ function IMac() {
       />
       <div className="iMac-screen-container">
         <div className="iMac-screen-border">
-          <div className={`iMac-screen transform ${style.scrollbarIMac}`}>
-            <div ref={bodyDivRef} className={`overflow-y-scroll h-full`}>
+          <div className={`iMac-screen transform ${Style.thinScrollbar}`}>
+            <div
+              ref={bodyDivRef}
+              className={` ${Style.fireFoxThinScrollbarY} overflow-y-scroll h-full`}
+            >
               <Navigation />
             </div>
           </div>

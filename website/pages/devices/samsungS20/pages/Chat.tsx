@@ -5,6 +5,7 @@ import ImageMessage from "../component/ImageMessage";
 import { IUser, useData } from "../SamsungS20Context";
 import DateDivider from "../component/DateDivider";
 import { motion } from "framer-motion";
+import Style from "../../../../styles/scroller.module.css";
 
 function Chat() {
   const context = useData();
@@ -82,9 +83,12 @@ function Chat() {
     <motion.div
       initial={{ x: "100px" }}
       animate={{ x: "0px" }}
-      className="relative h-full flex flex-col overflow-y-scroll"
+      className={`${Style.fireFoxThinNoScrollbar} relative h-full flex flex-col`}
     >
-      <div ref={scrollDiv} className="h-full overflow-y-scroll">
+      <div
+        ref={scrollDiv}
+        className={`${Style.fireFoxThinNoScrollbar} h-full overflow-y-scroll`}
+      >
         <div className="space-y-3 pt-4 px-2 pb-28">{createTable()}</div>
       </div>
       <div className="bg-white flex items-center gap-2 pt-2 pb-5 px-3 absolute bottom-0 left-0 right-0 shadow-2xl">

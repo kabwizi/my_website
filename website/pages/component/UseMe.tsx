@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useRef } from "react";
 import { useOnScreen } from "../../customHooks/CustomHooks";
+import { useData } from "../WebsiteMainContext";
 
 function UseMe({
   direction,
@@ -15,6 +16,7 @@ function UseMe({
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const onScreen = useOnScreen(ref, "-100px 100px -100px 50px");
+  const context = useData();
 
   return (
     <AnimatePresence>
@@ -35,7 +37,7 @@ function UseMe({
                 : "rounded-l-full rounded-t-full"
             } ${position}`}
           >
-            Use me
+            {context?.data.languageIndex === 0 ? "Utilisez-moi" : "Use me"}
           </motion.div>
         ) : null}
       </div>

@@ -139,7 +139,6 @@ function SectionLanguage() {
             },
           ]}
         />
-
         <LanguageCard
           language={[
             {
@@ -152,12 +151,27 @@ function SectionLanguage() {
             },
           ]}
         />
-
         <LanguageCard
           language={[
             {
               link: "https://www.figma.com/",
               src: "/main/programmingLanguage/figma.svg",
+            },
+          ]}
+        />
+        <LanguageCard
+          language={[
+            {
+              link: "https://git-scm.com/",
+              src: "/main/programmingLanguage/git.svg",
+            },
+          ]}
+        />
+        <LanguageCard
+          language={[
+            {
+              link: "https://www.framer.com/motion/",
+              src: "/main/programmingLanguage/framer.svg",
             },
           ]}
         />

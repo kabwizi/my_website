@@ -178,13 +178,17 @@ function SectionLanguage() {
         <LanguageCard
           language={[
             {
-              link: "https://firebase.google.com/docs/hosting",
+              link: "https://firebase.google.com/docs/auth",
               src: "/main/programmingLanguage/firebase_auth.svg",
             },
           ]}
         />
         <LanguageCard
           language={[
+            {
+              link: "https://firebase.google.com/docs/hosting",
+              src: "/main/programmingLanguage/firebase_hosting.svg",
+            },
             {
               link: "https://cpanel.net/",
               src: "/main/programmingLanguage/cpanel.svg",

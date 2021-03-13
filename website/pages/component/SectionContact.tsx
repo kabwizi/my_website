@@ -189,12 +189,14 @@ function SectionContact({
                   axios
                     .post("https://www.kabwiziserge.com/api/sendEmail", data)
                     .then((res) => {
-                      console.log(res);
                       setLoading(false);
                       if (res.data.emailSent) {
                         setSendEmailStatus({
                           status: true,
-                          message: "Votre message à bien été envoyé",
+                          message:
+                            context?.data.languageIndex == 0
+                              ? "Votre message à bien été envoyé"
+                              : "Your message has been sent",
                         });
                         if (
                           fullNameRef.current &&
@@ -210,7 +212,9 @@ function SectionContact({
                         setSendEmailStatus({
                           status: false,
                           message:
-                            "Une erreur est servenue veuillez ressayer plus tard",
+                            context?.data.languageIndex == 0
+                              ? "Une erreur est servenue veuillez ressayer plus tard"
+                              : "An error is served please try again later",
                         });
                       }
                     })
@@ -218,18 +222,32 @@ function SectionContact({
                       setSendEmailStatus({
                         status: false,
                         message:
-                          "Une erreur est servenue veuillez ressayer plus tard",
+                          context?.data.languageIndex == 0
+                            ? "Une erreur est servenue veuillez ressayer plus tard"
+                            : "An error is served please try again later",
                       });
                     });
                 } else {
                   if (fullNameRef.current?.value.trim() === "") {
-                    setFullNameError("Veuillez entrer votre nom complet");
+                    setFullNameError(
+                      context?.data.languageIndex == 0
+                        ? "Veuillez entrer votre nom complet"
+                        : "Please enter your full name"
+                    );
                   }
                   if (emailRef.current?.value.trim() === "") {
-                    setEmailError("Veuillez entrer votre courriel");
+                    setEmailError(
+                      context?.data.languageIndex == 0
+                        ? "Veuillez entrer votre courriel"
+                        : "Please enter your email"
+                    );
                   }
                   if (messageRef.current?.value.trim() === "") {
-                    setMessageError("Veuillez écrire un message");
+                    setMessageError(
+                      context?.data.languageIndex == 0
+                        ? "Veuillez écrire un message"
+                        : "Please write a message"
+                    );
                   }
                 }
               }}

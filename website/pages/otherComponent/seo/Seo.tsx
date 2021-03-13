@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 import BackgroundSvg from "../../component/BackgroundSvg";
 import SearchBar from "./component/SearchBar";
@@ -20,7 +21,12 @@ function Seo() {
         className="hidden sm:block h-full w-full absolute top-0 opacity-50"
       >
         <div className="relative h-full w-full rounded-2xl overflow-hidden">
-          <BackgroundSvg />
+          <Image
+            src="/seo/seo_background_svg.svg"
+            layout="fill"
+            objectFit="cover"
+            alt="seo animated background"
+          />
         </div>
       </motion.div>
       <motion.div
@@ -30,7 +36,12 @@ function Seo() {
         className="hidden sm:block h-full w-full absolute top-0 opacity-50"
       >
         <div className="relative h-full w-full rounded-2xl overflow-hidden">
-          <BackgroundSvg />
+          <Image
+            src="/seo/seo_background_svg.svg"
+            layout="fill"
+            objectFit="cover"
+            alt="seo animated background"
+          />
         </div>
       </motion.div>
       <motion.div
@@ -40,7 +51,12 @@ function Seo() {
         className=" hidden sm:block h-full w-full absolute top-0 opacity-50"
       >
         <div className="relative h-full w-full rounded-2xl overflow-hidden">
-          <BackgroundSvg />
+          <Image
+            src="/seo/seo_background_svg.svg"
+            layout="fill"
+            objectFit="cover"
+            alt="seo animated background"
+          />
         </div>
       </motion.div>
     </div>

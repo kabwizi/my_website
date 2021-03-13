@@ -8,36 +8,11 @@ export const config = {
   },
 };
 
-const upload = new multer().single("file");
-
-export default async (req, res) => {
-  upload(req, res, function (err) {
-    if (err instanceof multer.MulterError) {
-      // A Multer error occurred when uploading.
-      console.log("Multer err");
-      res.end();
-    } else if (err) {
-      // An unknown error occurred when uploading.
-      console.log("unknown err");
-      res.end();
-    }
-    // Everything went fine.
-    sendMail(req)
-      .then((result) => {
-        console.log("envoyé ", result);
-        res.send(result);
-      })
-      .catch((error) => {
-        console.log("error: ", console.error());
-        res.send(result);
-      });
-  });
-};
-
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRETE = process.env.CLIENT_SECRETE;
 const REDIRECT_URL = process.env.REDIRECT_URL;
 const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
+
 const oauth2Client = new google.auth.OAuth2(
   CLIENT_ID,
   CLIENT_SECRETE,
@@ -47,9 +22,36 @@ oauth2Client.setCredentials({
   refresh_token: REFRESH_TOKEN,
 });
 
+const upload = new multer().single("file");
+
+export default async (req, res) => {
+  upload(req, res, function (err) {
+    if (err instanceof multer.MulterError) {
+      // A Multer error occurred when uploading.
+      console.log("Multer error: ", err);
+      res.send(false);
+    } else if (err) {
+      // An unknown error occurred when uploading.
+      console.log("unknown error: ", err);
+      res.send(false);
+    }
+    // Everything went fine.
+    sendMail(req)
+      .then((result) => {
+        console.log("envoyé: ", result);
+        res.send(result);
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+        res.send(result);
+      });
+  });
+};
+
 async function sendMail(req) {
   try {
-    const accessToken = oauth2Client.getAccessToken();
+    const accessToken = await oauth2Client.getAccessToken();
+
     const smtpTransport = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -65,12 +67,11 @@ async function sendMail(req) {
     let adminMailOptions = {
       from: req.body.email,
       to: "kabwiziserge@gmail.com",
-      subject: req.body.subject,
+      subject: `${req.body.fullName} Nouveau client`,
       generateTextFromHTML: true,
-      html: `<h1>${req.body.fullName}, Nouveau client</h1></br>
-      <p>Nom complet: ${req.body.fullName}</p></br>
-      <p>E-mail: ${req.body.email}</p></br>
-      <h2>${req.body.fullName}, Nouveau client</h2></br>
+      html: `<p>Nom complet: ${req.body.fullName}</p></br>
+      <p>E-mail: ${req.body.email}</p></br></br>
+      <h2>Message</h2></br>
       <p>${req.body.message}</p>`,
     };
     if (req.file) {
@@ -82,7 +83,6 @@ async function sendMail(req) {
       ];
     }
     await smtpTransport.sendMail(adminMailOptions);
-
     return true;
   } catch (error) {
     console.log(error);

@@ -187,7 +187,7 @@ function SectionContact({
                   }
                   setLoading(true);
                   axios
-                    .post("http://localhost:3000/api/sendEmail", data)
+                    .post("https://www.kabwiziserge.com/api/sendEmail", data)
                     .then((res) => {
                       console.log(res);
                       setLoading(false);

@@ -32,13 +32,14 @@ export default async (req, res) => {
     } else if (err) {
       // An unknown error occurred when uploading.
       res.status(400).send(false);
-    }
-    // Everything went fine.
-    try {
-      let result = await sendMail(req);
-      res.status(200).send(result);
-    } catch (error) {
-      res.status(500).send(false);
+    } else {
+      // Everything went fine.
+      try {
+        let result = await sendMail(req);
+        res.status(200).send(result);
+      } catch (error) {
+        res.status(500).send(false);
+      }
     }
   });
 };

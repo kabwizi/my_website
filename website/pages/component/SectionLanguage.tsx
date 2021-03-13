@@ -175,6 +175,26 @@ function SectionLanguage() {
             },
           ]}
         />
+        <LanguageCard
+          language={[
+            {
+              link: "https://firebase.google.com/docs/hosting",
+              src: "/main/programmingLanguage/firebase_auth.svg",
+            },
+          ]}
+        />
+        <LanguageCard
+          language={[
+            {
+              link: "https://cpanel.net/",
+              src: "/main/programmingLanguage/cpanel.svg",
+            },
+            {
+              link: "https://vercel.com/docs",
+              src: "/main/programmingLanguage/vercel.svg",
+            },
+          ]}
+        />
       </motion.div>
       <motion.div
         whileHover={{ scale: 1.2 }}

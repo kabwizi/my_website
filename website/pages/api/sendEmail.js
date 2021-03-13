@@ -28,17 +28,17 @@ export default async (req, res) => {
   upload(req, res, async function (err) {
     if (err instanceof multer.MulterError) {
       // A Multer error occurred when uploading.
-      res.status(400).send(false);
+      res.status(400).send({ error: err, emailSent: false });
     } else if (err) {
       // An unknown error occurred when uploading.
-      res.status(400).send(false);
+      res.status(400).send({ error: err, emailSent: false });
     } else {
       // Everything went fine.
       try {
         let result = await sendMail(req);
         res.status(200).send(result);
       } catch (error) {
-        res.status(500).send(false);
+        res.status(500).send({ error: error, emailSent: false });
       }
     }
   });
@@ -79,8 +79,8 @@ async function sendMail(req) {
       ];
     }
     await smtpTransport.sendMail(adminMailOptions);
-    return true;
+    return { error: undefined, emailSent: true };
   } catch (error) {
-    return false;
+    return { error: error, emailSent: false };
   }
 }

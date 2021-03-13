@@ -191,7 +191,7 @@ function SectionContact({
                     .then((res) => {
                       console.log(res);
                       setLoading(false);
-                      if (res.data) {
+                      if (res.data.emailSent) {
                         setSendEmailStatus({
                           status: true,
                           message: "Votre message à bien été envoyé",

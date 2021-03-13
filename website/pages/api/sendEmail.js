@@ -25,26 +25,21 @@ oauth2Client.setCredentials({
 const upload = new multer().single("file");
 
 export default async (req, res) => {
-  upload(req, res, function (err) {
+  upload(req, res, async function (err) {
     if (err instanceof multer.MulterError) {
       // A Multer error occurred when uploading.
-      console.log("Multer error: ", err);
-      res.send(false);
+      res.status(400).send(false);
     } else if (err) {
       // An unknown error occurred when uploading.
-      console.log("unknown error: ", err);
-      res.send(false);
+      res.status(400).send(false);
     }
     // Everything went fine.
-    sendMail(req)
-      .then((result) => {
-        console.log("envoyé: ", result);
-        res.send(result);
-      })
-      .catch((error) => {
-        console.log("error: ", error);
-        res.send(result);
-      });
+    try {
+      let result = await sendMail(req);
+      res.status(200).send(result);
+    } catch (error) {
+      res.status(500).send(false);
+    }
   });
 };
 
@@ -85,7 +80,6 @@ async function sendMail(req) {
     await smtpTransport.sendMail(adminMailOptions);
     return true;
   } catch (error) {
-    console.log(error);
     return false;
   }
 }

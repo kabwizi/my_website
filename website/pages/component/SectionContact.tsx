@@ -189,6 +189,7 @@ function SectionContact({
                   axios
                     .post("http://localhost:3000/api/sendEmail", data)
                     .then((res) => {
+                      console.log(res);
                       setLoading(false);
                       if (res.data) {
                         setSendEmailStatus({
@@ -213,7 +214,13 @@ function SectionContact({
                         });
                       }
                     })
-                    .catch((err) => console.log(err));
+                    .catch((err) => {
+                      setSendEmailStatus({
+                        status: false,
+                        message:
+                          "Une erreur est servenue veuillez ressayer plus tard",
+                      });
+                    });
                 } else {
                   if (fullNameRef.current?.value.trim() === "") {
                     setFullNameError("Veuillez entrer votre nom complet");

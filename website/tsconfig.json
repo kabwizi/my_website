@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,7 +23,10 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/devices/samsungS20U/pages/Map.js",
-    "pages/devices/IMac/pages/Product.js"
+    "pages/devices/IMac/pages/Product.js",
+    "tests/Contact.test.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -13,6 +13,12 @@
   height: 700px;
 }
 
+/*===============use me====================*/
+.useMeShadow {
+  -webkit-box-shadow: 0px 0px 21px 11px rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 21px 11px rgba(255, 255, 255, 0.1);
+}
+
 /*===============INTRO PHONE SHADOW============*/
 .IntoPhoneShadow {
   box-shadow: 14px 12px 31px 12px rgba(0, 0, 0, 0.18);

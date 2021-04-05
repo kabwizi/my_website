@@ -46,8 +46,8 @@ export default async (req, res) => {
       }
       if (errorList.length == 0) {
         try {
-          let result = await sendMail(req)
-          res.status(200).send(result)
+          await sendMail(req)
+          res.status(200).end()
         } catch (err) {
           res.status(500).send({ error: err })
         }

@@ -3,9 +3,9 @@ import BigTitle from './BigTitle'
 import Image from 'next/image'
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion'
 import { useData } from '../WebsiteMainContext'
-import axios from 'axios'
 import ContactInput from './ContactInput'
 import ContactFileInput from './ContactFileInput'
+import { sendContactFrom } from '../functions/contactFunction'
 
 function SectionContact({
   contactRef
@@ -170,86 +170,19 @@ function SectionContact({
             <motion.div
               whileHover={{ scale: 1.07 }}
               onClick={() => {
-                if (
-                  fullNameRef.current &&
-                  emailRef.current &&
-                  messageRef.current &&
-                  fullNameRef.current.value.trim() !== '' &&
-                  emailRef.current.value.trim() !== '' &&
-                  messageRef.current.value.trim() !== ''
-                ) {
-                  const data = new FormData()
-                  data.append('fullName', fullNameRef.current.value)
-                  data.append('email', emailRef.current.value)
-                  data.append('message', messageRef.current.value)
-                  if (file) {
-                    data.append('file', file)
-                  }
-                  setLoading(true)
-                  axios
-                    .post('https://www.kabwiziserge.com/api/sendEmail', data)
-                    .then((res) => {
-                      setLoading(false)
-                      if (res.data.emailSent) {
-                        setSendEmailStatus({
-                          status: true,
-                          message:
-                            context?.data.languageIndex == 0
-                              ? 'Votre message à bien été envoyé'
-                              : 'Your message has been sent'
-                        })
-                        if (
-                          fullNameRef.current &&
-                          emailRef.current &&
-                          messageRef.current
-                        ) {
-                          fullNameRef.current.value = ''
-                          emailRef.current.value = ''
-                          messageRef.current.value = ''
-                        }
-                        if (file) setFile(null)
-                      } else {
-                        setSendEmailStatus({
-                          status: false,
-                          message:
-                            context?.data.languageIndex == 0
-                              ? 'Une erreur est servenue veuillez ressayer plus tard'
-                              : 'An error is served please try again later'
-                        })
-                      }
-                    })
-                    .catch((err) => {
-                      setSendEmailStatus({
-                        status: false,
-                        message:
-                          context?.data.languageIndex == 0
-                            ? 'Une erreur est servenue veuillez ressayer plus tard'
-                            : 'An error is served please try again later'
-                      })
-                    })
-                } else {
-                  if (fullNameRef.current?.value.trim() === '') {
-                    setFullNameError(
-                      context?.data.languageIndex == 0
-                        ? 'Veuillez entrer votre nom complet'
-                        : 'Please enter your full name'
-                    )
-                  }
-                  if (emailRef.current?.value.trim() === '') {
-                    setEmailError(
-                      context?.data.languageIndex == 0
-                        ? 'Veuillez entrer votre courriel'
-                        : 'Please enter your email'
-                    )
-                  }
-                  if (messageRef.current?.value.trim() === '') {
-                    setMessageError(
-                      context?.data.languageIndex == 0
-                        ? 'Veuillez écrire un message'
-                        : 'Please write a message'
-                    )
-                  }
-                }
+                sendContactFrom(
+                  fullNameRef,
+                  setFullNameError,
+                  emailRef,
+                  setEmailError,
+                  messageRef,
+                  setMessageError,
+                  file,
+                  setFile,
+                  setLoading,
+                  setSendEmailStatus,
+                  context
+                )
               }}
               className='baseButtonBlackStyleTailwind h-10 flex items-center  font-semibold'
             >

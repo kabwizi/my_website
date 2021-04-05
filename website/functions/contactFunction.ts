@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IACtion, IData } from '../WebsiteMainContext'
+import { IACtion, IData } from '../pages/WebsiteMainContext'
 
 export function sendContactFrom(
   fullNameRef: React.MutableRefObject<HTMLInputElement | null>,

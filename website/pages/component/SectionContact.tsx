@@ -5,7 +5,7 @@ import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion'
 import { useData } from '../WebsiteMainContext'
 import ContactInput from './ContactInput'
 import ContactFileInput from './ContactFileInput'
-import { sendContactFrom } from '../functions/contactFunction'
+import { sendContactFrom } from '../../functions/contactFunction'
 
 function SectionContact({
   contactRef

@@ -211,6 +211,14 @@ function SectionLanguage() {
             }
           ]}
         />
+        <LanguageCard
+          language={[
+            {
+              link: 'https://redux.js.org/',
+              src: '/main/programmingLanguage/redux.svg'
+            }
+          ]}
+        />
       </motion.div>
       <motion.div
         whileHover={{ scale: 1.2 }}
